@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Team = require('./models/team')
+const Team = require('team')
 
 const User = new mongoose.Schema({
   _id: String,
