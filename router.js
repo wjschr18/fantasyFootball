@@ -1,5 +1,6 @@
 const express = require('express');
 const Team = require('./models/team')
+const User = require('./models/user')
 // const courses = require('./controllers/stats');
 
 // Create the router
