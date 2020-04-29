@@ -23,7 +23,7 @@ router.get('/teams/new', function(request, response){
 });
 
 router.get('/teams', function(request, response){
-  response.render('viewTeam');
+  User.find().then(users => response.render('viewTeam', {users: users}));
 });
 
 router.get('/teams/scores', function(request, response){
