@@ -1,5 +1,7 @@
 const Stats = require('..schema');
 
+//test
+
 // GET /courses
 module.exports.index = function(request, response, next) {
   Course.distinct('_id')
