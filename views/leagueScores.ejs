@@ -41,9 +41,22 @@
           </nav>
           <main class="col border-left border-dark">
             <h2>League Scores</h2>
-            <ul>
-              <%_ for (const team of teams) { -%>
-                <li><%= team.name, team.score -%></li>
-              <%_ } -%>
-            </ul>
+            <div class="row">
+              <div class="col">
+                <ul>
+                  <%_ for (const team of teams) { -%>
+                    <li><%= team.name-%></li>
+                  <%_ } -%>
+                </ul>
+              </div>
+              <div class="col">
+                <ul>
+                  <%_ for (const team of teams) { -%>
+                    <li><%= team.score-%></li>
+                  <%_ } -%>
+                </ul>
+              </div>
+
+            </div>
+
 </html>
