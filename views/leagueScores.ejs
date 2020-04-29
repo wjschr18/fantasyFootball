@@ -43,7 +43,7 @@
             <h2>League Scores</h2>
             <ul>
               <%_ for (const team of teams) { -%>
-                <li><%= team.name -%></li>
+                <li><%= team.name, team.score -%></li>
               <%_ } -%>
             </ul>
 </html>
