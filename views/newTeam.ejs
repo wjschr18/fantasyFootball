@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Team Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+      .custHead{
+          background-color: rgb(1, 51, 105);
+      }
+      #headText{
+        /* font-family: 'Frijole', cursive; */
+        font-family: 'Audiowide', cursive;
+        font-size: 28px;
+      }
+      .whiteSVG{
+        filter: invert(100%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar navbar-expand custHead mb-2 shadow">
+      <a class="navbar-brand" href="homePage.html">
+        <img src="https://static.nfl.com/static/content/public/static/wildcat/assets/img/application-shell/shield/default.svg" style="width: 50px">
+        <span class="text-light pl-2" id="headText">Fantasy Football</span>
+      </a>
+      <button type="button" name="signIn" class="ml-auto nav-item btn btn-sm btn-outline-light">Sign-in</button>
+
+      <nav class= "navbar-nav">
+    </header>
+      <div class="container-fluid">
+        <div class="row pl-3">
+          <nav class="col-auto nav nav-pills flex-column bg-light">
+            <a href="/" class="nav-item nav-link mt-2">Home</a>
+            <a href="/teams/new" class="nav-item nav-link ">Start New Team</a>
+            <a href="/teams" class="nav-item nav-link active">My Team</a>
+            <a href="/teams/scores" class="nav-item nav-link">League Scores</a>
+          </nav>
+          <main class="col border-left border-dark">
+            <h2>Team Management</h2>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Create A New Team</h5>
+                <p class="card-text">Want to join the league? Awesome! Get started by entering your team name below</p>
+                <input type="text" class="pr-3"name="teamNameField" value="">
+                <button id="submit" class="btn btn-primary ml-2">Create Your Team</button>
+              </div>
+            </div>
+            <script
+              src="https://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous">
+            </script>
+            <script>
+            // Intercept form submits
+            $('button').on('click', function(event) {
+              event.preventDefault();
+
+              // Construct a request object
+              const request = {
+                method: 'PUT',
+                url: '/teams/',
+                data: $('#body').val()
+              };
+
+              // Send the request and display the response on the page
+              $.ajax(request)
+                .done(response => $('textarea').val(JSON.stringify(response)))
+                .fail(error => $('textarea').val(JSON.stringify(error)));
+            </script>
+</html>

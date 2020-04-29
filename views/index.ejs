@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+      .custHead{
+          background-color: rgb(1, 51, 105);
+      }
+      #headText{
+        /* font-family: 'Frijole', cursive; */
+        font-family: 'Audiowide', cursive;
+        font-size: 28px;
+      }
+      .whiteSVG{
+        filter: invert(100%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar navbar-expand custHead mb-2 shadow">
+      <a class="navbar-brand" href="homePage.html">
+        <img src="https://static.nfl.com/static/content/public/static/wildcat/assets/img/application-shell/shield/default.svg" style="width: 50px">
+        <span class="text-light pl-2" id="headText">Fantasy Football</span>
+      </a>
+      <button type="button" name="signIn" class="ml-auto nav-item btn btn-sm btn-outline-light"><img src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/account-login.svg" class="mr-1 whiteSVG" style="height: 18px">Sign-in</button>
+
+      <nav class= "navbar-nav">
+    </header>
+      <div class="container-fluid">
+        <div class="row pl-3">
+          <nav class="col-auto nav nav-pills flex-column bg-light">
+            <a href="/" class="nav-item nav-link mt-2">Home</a>
+            <a href="/teams/new" class="nav-item nav-link ">Start New Team</a>
+            <a href="/teams" class="nav-item nav-link active">My Team</a>
+            <a href="/teams/scores" class="nav-item nav-link">League Scores</a>
+          </nav>
+          <main class="col border-left border-dark">
+            <h2 class="">Welcome To The Fantasy Football League!</h2>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Create A New Team!</h5>
+                    <p class="card-text">Create a new fantasy team</p>
+                    <a href="newTeam.html" class="btn btn-primary">Start New Team</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Check Overall League Scores</h5>
+                    <p class="card-text">View every team's scores for the current week</p>
+                    <a href="#" class="btn btn-primary">View Scores</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <h4 class= "mt-4">To create a new team, click the "Start New Team" tab</p>
+            <h4 class= "mt-4">To view your team, and to enter your scores for the week, select the "My Team" tab</p>
+            <h4 class= "mt-4">To view every team's scores for the week, click the "League Scores" tab</p> -->
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+      .custHead{
+          background-color: rgb(1, 51, 105);
+      }
+      #headText{
+        /* font-family: 'Frijole', cursive; */
+        font-family: 'Audiowide', cursive;
+        font-size: 28px;
+      }
+      .whiteSVG{
+        filter: invert(100%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar navbar-expand custHead mb-2 shadow">
+      <a class="navbar-brand" href="homePage.html">
+        <img src="https://static.nfl.com/static/content/public/static/wildcat/assets/img/application-shell/shield/default.svg" style="width: 50px">
+        <span class="text-light pl-2" id="headText">Fantasy Football</span>
+      </a>
+      <button type="button" name="signIn" class="ml-auto nav-item btn btn-sm btn-outline-light">Sign-in</button>
+
+      <nav class= "navbar-nav">
+    </header>
+      <div class="container-fluid">
+        <div class="row pl-3">
+          <nav class="col-auto nav nav-pills flex-column bg-light">
+            <a href="/" class="nav-item nav-link mt-2">Home</a>
+            <a href="/teams/new" class="nav-item nav-link ">Start New Team</a>
+            <a href="/teams" class="nav-item nav-link active">My Team</a>
+            <a href="/teams/scores" class="nav-item nav-link">League Scores</a>
+          </nav>
+          <main class="col border-left border-dark">
+            <h2 id="title">Your Team</h2>
+            <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
+            <input type="text" id="team">
+            <button id="submit1">Go</button>
+            <h3 id="lastScore">Your Previous Score: </h3>
+            <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
+            <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
+            <h5 id="qbYdsL" class="ml-4"> Passing Yards: </h5>
+            <input type="text" id="qbT1" class="ml-4">
+            <h5 id="qbTdsL" class="ml-4 mt-2"> Passing TDs: </h5>
+            <input type="text" id="qbT2" class="ml-4">
+            <h4 id="rbLabel" class="mt-3">RB Stats:</h4>
+            <h5 id="rbYdsL" class="ml-4"> Rushing Yards: </h5>
+            <input type="text" id="rbT1" class="ml-4">
+            <h5 id="rbTdsL" class="ml-4 mt-2"> Rushing TDs: </h5>
+            <input type="text" id="rbT2" class="ml-4">
+            <h4 id="wrLabel" class="mt-3">WR Stats:</h4>
+            <h5 id="wrYdsL" class="ml-4"> Receiving Yards: </h5>
+            <input type="text" id="wrT1" class="ml-4">
+            <h5 id="wrTdsL" class="ml-4 mt-2"> Recieving TDs: </h5>
+            <input type="text" id="wrT2" class="ml-4">
+            <h4 id="teLabel" class="mt-3">TE Stats:</h4>
+            <h5 id="teYdsL" class="ml-4"> Receiving Yards: </h5>
+            <input type="text" id="teT1" class="ml-4">
+            <h5 id="teTdsL" class="ml-4 mt-2"> Receiving TDs: </h5>
+            <input type="text" id="teT2" class="ml-4">
+            <h5 id="filler">________________________</h5>
+            <button id="submit2" class="mt-2">Submit Stats</button>
+            <script
+              src="https://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous">
+            </script>
+            <script>
+              $('#lastScore').hide();
+              $('#newScore').hide();
+              $('#qbLabel').hide();
+              $('#rbLabel').hide();
+              $('#wrLabel').hide();
+              $('#teLabel').hide();
+              $('#qbYdsL').hide();
+              $('#qbTdsL').hide();
+              $('#rbYdsL').hide();
+              $('#rbTdsL').hide();
+              $('#wrYdsL').hide();
+              $('#wrTdsL').hide();
+              $('#teYdsL').hide();
+              $('#teTdsL').hide();
+              $('#qbT1').hide();
+              $('#qbT2').hide();
+              $('#rbT1').hide();
+              $('#rbT2').hide();
+              $('#wrT1').hide();
+              $('#wrT2').hide();
+              $('#teT1').hide();
+              $('#teT2').hide();
+              $('#filler').hide();
+              $('#submit2').hide();
+              $('#submit1').on('click', function(event) {
+                event.preventDefault();
+                $('#title').remove();
+                $('#instructions').remove();
+                $('#text').remove();
+                $('#submit').remove();
+                $('#lastScore').show();
+                $('#newScore').show();
+                $('#qbLabel').show();
+                $('#rbLabel').show();
+                $('#wrLabel').show();
+                $('#teLabel').show();
+                $('#qbYdsL').show();
+                $('#qbTdsL').show();
+                $('#rbYdsL').show();
+                $('#rbTdsL').show();
+                $('#wrYdsL').show();
+                $('#wrTdsL').show();
+                $('#teYdsL').show();
+                $('#teTdsL').show();
+                $('#qbT1').show();
+                $('#qbT2').show();
+                $('#rbT1').show();
+                $('#rbT2').show();
+                $('#wrT1').show();
+                $('#wrT2').show();
+                $('#teT1').show();
+                $('#teT2').show();
+                $('#filler').show();
+                $('#submit2').show();
+              });
+            </script>
+        </div>
+      </div>
+</html>
