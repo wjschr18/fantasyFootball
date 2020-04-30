@@ -2,7 +2,26 @@
 <html>
   <%- include('./navs'); -%>
             <h2>League Scores</h2>
-            <div class="row">
+            <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Team</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%_ for (const team of teams) { -%>
+
+    <tr>
+      <th scope="row"><%= team.index + 1-%></th>
+      <td><%= team.name-%></td>
+      <td><%= team.score-%></td>
+    </tr>
+    <%_ } -%>
+  </tbody>
+</table>
+            <!-- <div class="row">
               <div class="col">
                 <ul>
                   <%_ for (const team of teams) { -%>
@@ -16,7 +35,7 @@
                     <li><%= team.score-%></li>
                   <%_ } -%>
                 </ul>
-              </div>
+              </div> -->
 
             </div>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
