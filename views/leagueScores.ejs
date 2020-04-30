@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
   <%- include('./navs'); -%>
-            <h2>League Scores</h2>
-            <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Team</th>
-      <th scope="col">Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%_ let counter = 1;-%>
-    <%_ for (const team of teams) { -%>
-
-    <tr>
-      <th scope="row"><%=counter++-%></th>
-      <td><%= team.name-%></td>
-      <td><%= team.score-%></td>
-    </tr>
-    <%_ } -%>
-  </tbody>
-</table>
+<h2>League Scores</h2>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%_ let counter = 1;-%>
+      <%_ for (const team of teams) { -%>
+      <tr>
+        <th scope="row"><%=counter++-%></th>
+        <td><%= team.name-%></td>
+        <td><%= team.score-%></td>
+      </tr>
+      <%_ } -%>
+    </tbody>
+  </table>
             <!-- <div class="row">
               <div class="col">
                 <ul>
