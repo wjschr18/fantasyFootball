@@ -11,10 +11,11 @@
     </tr>
   </thead>
   <tbody>
+    <%_ let counter = 0;-%>
     <%_ for (const team of teams) { -%>
 
     <tr>
-      <th scope="row"><%= team.index + 1-%></th>
+      <th scope="row"><%= counter + 1-%></th>
       <td><%= team.name-%></td>
       <td><%= team.score-%></td>
     </tr>
