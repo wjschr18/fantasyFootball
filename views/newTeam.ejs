@@ -23,7 +23,7 @@
         const form = $(this);
         event.preventDefault();
         $.ajax({method: 'post', url: '/teams/new', data: form.serialize()})
-          .done(id => window.location.replace(`/teams/${id}`))
+          .done()
           .fail(error => alert(error.responseText));
       });
 
