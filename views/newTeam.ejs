@@ -19,7 +19,7 @@
       $('.active').removeClass('active');
       $('#newTeam').addClass('active');
 
-      $('#create').on('submit', function(event){
+      $('#create').on('click', function(event){
         const form = $(this);
         event.preventDefault();
         $.ajax({method: 'post', url: '/teams/new', data: form.serialize()})
