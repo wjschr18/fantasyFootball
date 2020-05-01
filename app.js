@@ -2,7 +2,7 @@ const express = require('express');
 // const session = require('express-session');
 const router = require('./router');
 const connect = require('./db');
-//testtesttest
+
 // Connect to the database
 connect();
 
@@ -16,9 +16,9 @@ app.set('views', './views');
 // Parse request bodies like query strings
 app.use(express.urlencoded({extended: false}));
 
-// // Generate a session for each client
+// // // Generate a session for each client
 // app.use(session({
-//   name: 'catalog', // Name of client cookies
+//   name: 'fantasyFootball', // Name of client cookies
 //   secret: 'temporary', // Password for client cookies
 //   resave: false, // Recommended setting
 //   saveUninitialized: false // Recommended setting
@@ -47,7 +47,7 @@ app.use(function(request, response, next) {
 //   request.session.admin = true;
 //   response.redirect('back');
 // });
-//
+// //
 // // Exit admin mode and return to the previous page
 // app.get('/logout', function(request, response) {
 //   request.session.admin = false;
