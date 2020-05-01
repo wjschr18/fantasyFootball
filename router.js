@@ -32,17 +32,17 @@ router.get('/teams/scores', function(request, response){
   Team.find().then(teams => response.render('leagueScores', {teams: teams}));
 });
 // POST /teams/new
-router.post('/teams/new', function(request, response) {
-  const team = request.body;
-  if (!team.name) {
-    response.status(400).send('Missing Name');
-  } else if (teamList.find(f => f.name === team.name)) {
-    response.status(400).send('Duplicate Name');
-  } else {
-    teamList.push(team);
-    response.status(201).send(teamList);
-  }
-});
+// router.post('/teams/new', function(request, response) {
+//   const team = request.body;
+//   if (!team.name) {
+//     response.status(400).send('Missing Name');
+//   } else if (teamList.find(f => f.name === team.name)) {
+//     response.status(400).send('Duplicate Name');
+//   } else {
+//     teamList.push(team);
+//     response.status(201).send(teamList);
+//   }
+// });
 
 //Handle course requests
 // router.get('/teams', teams.index);
