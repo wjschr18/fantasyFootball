@@ -20,7 +20,7 @@ router.get('/', function(request, response){
 });
 
 router.get('/teams/new', function(request, response){
-  response.render('newTeam', {teams: teams});
+  Team.find().then(teams => response.render('newTeam', {teams: teams}));
 });
 
 router.get('/teams', function(request, response){
