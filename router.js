@@ -1,7 +1,7 @@
 const express = require('express');
 const Team = require('./models/team')
 const User = require('./models/user')
-const teams = require('reset')
+const teams = require('./reset')
 // const teams = require('./controllers/teams');
 
 // Create the router
