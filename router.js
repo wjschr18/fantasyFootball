@@ -2,25 +2,25 @@ const express = require('express');
 const Team = require('./models/team')
 const User = require('./models/user')
 // const teamsList = require('./reset')
-const teams = require('./controllers/user');
+const users = require('./controllers/users');
 
 // Create the router
 const router = express.Router();
 
 // // Check for admin status
-// const authorize = function(request, response, next) {
-//   if (request.session.admin) {
-//     next(); // Fulfill the request
-//   } else {
-//     response.status(401).end();
-//   }
-// };
+const authorize = function(request, response, next) {
+   if (request.session.admin) {
+     next(); // Fulfill the request
+  } else {
+  response.status(401).end();
+   }
+};
+
+router.post('/login', users.login)
 
 router.get('/', function(request, response){
   response.render('index');
 });
-
-router.post('/login', user.login)
 
 router.get('/admin', function(request, response){
   response.render('admin');
