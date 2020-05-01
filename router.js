@@ -1,6 +1,7 @@
 const express = require('express');
 const Team = require('./models/team')
 const User = require('./models/user')
+const teams = require('reset')
 // const teams = require('./controllers/teams');
 
 // Create the router
@@ -35,11 +36,11 @@ router.post('/teams/new', function(request, response) {
   const team = request.body;
   if (!team.name) {
     response.status(400).send('Missing Name');
-  } else if (Team.find(f => f.name === team.name)) {
+  } else if (teams.find(f => f.name === team.name)) {
     response.status(400).send('Duplicate Name');
   } else {
-    Team.push(team);
-    response.status(201).send(Team);
+    teams.push(team);
+    response.status(201).send(teams);
   }
 });
 

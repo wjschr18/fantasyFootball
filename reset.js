@@ -38,3 +38,5 @@ mongoose.connection.dropDatabase()
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
   .catch(error => console.error(error.stack));
+
+module.exports = teams;
