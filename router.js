@@ -20,6 +20,12 @@ router.get('/', function(request, response){
   response.render('index');
 });
 
+router.post('/login', user.login)
+
+router.get('/admin', function(request, response){
+  response.render('admin');
+});
+
 router.get('/teams/new', function(request, response){
   Team.find().then(teams => response.render('newTeam', {teams: teams}));
 });
