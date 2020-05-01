@@ -24,7 +24,7 @@
         event.preventDefault();
         $.ajax({method: 'post', url: '/teams/new', data: `name=${form.serialize()}&score=0&owner=testOwner`})
           .done()
-          .fail(console.log(error.responseText)));
+          .fail(console.log(error.responseText));
       });
 
     </script>
