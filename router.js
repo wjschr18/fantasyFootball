@@ -33,14 +33,13 @@ router.get('/teams/scores', function(request, response){
 // POST /teams/new
 router.post('/teams/new', function(request, response) {
   const team = request.body;
-  const teams = Team.find();
   if (!team.name) {
     response.status(400).send('Missing Name');
-  } else if (teams.find(f => f.name === team.name)) {
+  } else if (Team.find(f => f.name === team.name)) {
     response.status(400).send('Duplicate Name');
   } else {
-    teams.push(team);
-    response.status(201).send(teams);
+    Team.push(team);
+    response.status(201).send(Team);
   }
 });
 
