@@ -31,8 +31,9 @@ router.get('/teams/scores', function(request, response){
   Team.find().then(teams => response.render('leagueScores', {teams: teams}));
 });
 // POST /teams/new
-router.post('/teams', function(request, response) {
+router.post('/teams/new', function(request, response) {
   const team = request.body;
+  const teams = Team.find();
   if (!team.name) {
     response.status(400).send('Missing Name');
   } else if (teams.find(f => f.name === team.name)) {
