@@ -17,3 +17,11 @@ module.exports.create = function(request, response, next) {
     .then(team => response.status(201).send(team.name))
     .catch(error => next(error));
 };
+
+// module.exports.index = function(request, response) {
+//   response.send('GET /teams');
+// };
+
+module.exports.retrieve = function(request, response) {
+  response.send(`GET /teams/${request.params.name}`);
+};

@@ -3,6 +3,7 @@ const Team = require('./models/team')
 const User = require('./models/user')
 // const teamsList = require('./reset')
 const users = require('./controllers/users');
+const teams = require('./controllers/team');
 
 // Create the router
 const router = express.Router();
@@ -53,7 +54,7 @@ router.get('/teams/scores', function(request, response){
 //Handle course requests
 // router.get('/teams', teams.index);
 // router.get('/teams/:id', teams.retrieve);
-// router.post('/teams', authorize, teams.create);
+router.post('/teams/new', authorize, teams.create);
 // router.delete('/teams/:id', authorize, teams.delete);
 // router.put('/teams/:id', authorize, teams.update);
 
