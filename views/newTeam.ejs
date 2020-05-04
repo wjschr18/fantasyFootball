@@ -23,11 +23,7 @@
         const form = $('#teamName');
         event.preventDefault();
         $.ajax({method: 'post', url: '/teams/new', data: `${form.serialize()}&score=0&owner=testOwner`})
-<<<<<<< HEAD
           .done(response.render('viewTeam'))
-=======
-          .done(id => window.location.replace('/newTeam'))
->>>>>>> e41a71ce969ad10d382bada2a04790b45aea11a5
           .fail(console.log(error.responseText));
       });
 
