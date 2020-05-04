@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <%- include('./navs'); -%>
   <header class="navbar navbar-expand custHead mb-2 shadow">
@@ -7,7 +6,6 @@
       <span class="text-light pl-2" id="headText">Fantasy Football</span>
     </a>
   </header>
-
   <body>
     <div class="card m-3"
     <div class="card m-3">
@@ -22,12 +20,11 @@
   </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-
   $('#login').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
     $.ajax({method: 'post', url: '/admin', data: form.serialize()})
-      .done(id => window.location.replace('/admin'))
+      .done(id => window.location.replace('/index'))
       .fail(error => alert("could not login"));
   });
   </script>
