@@ -24,7 +24,7 @@
         const form = $('#teamName');
         event.preventDefault();
         $.ajax({method: 'post', url: '/teams/new', data: `${form.serialize()}&score=0&owner=testOwner`})
-          .done(response.render('viewTeam'))
+          .done(response.render('/viewTeam'))
           .fail(console.log(error.responseText));
       });
 
