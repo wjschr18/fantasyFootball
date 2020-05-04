@@ -23,7 +23,7 @@
         const form = $('#teamName');
         event.preventDefault();
         $.ajax({method: 'post', url: '/teams/new', data: `${form.serialize()}&score=0&owner=testOwner`})
-          .done()
+          .done(id => window.location.replace('/newTeam'))
           .fail(console.log(error.responseText));
       });
 
