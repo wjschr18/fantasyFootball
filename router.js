@@ -16,11 +16,11 @@ const authorize = function(request, response, next) {
    }
 };
 
-router.post('/login', users.login)
-
 router.get('/', function(request, response){
   response.render('index');
 });
+
+router.post('/login', users.login);
 
 router.get('/admin', function(request, response){
   response.render('admin');
