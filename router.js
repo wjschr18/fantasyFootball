@@ -7,14 +7,14 @@ const teams = require('./controllers/team');
 // Create the router
 const router = express.Router();
 
-// // Check for admin status
-const authorize = function(request, response, next) {
-   if (request.session.admin) {
-     next(); // Fulfill the request
-  } else {
-  response.status(401).end();
-   }
-};
+// Check for admin status
+//const authorize = function(request, response, next) {
+   //if (request.session.admin) {
+     //next(); // Fulfill the request
+  //} else {
+  //response.status(401).end();
+   //}
+//};
 
 router.get('/', function(request, response){
   response.render('index');
