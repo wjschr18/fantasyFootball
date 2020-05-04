@@ -23,8 +23,8 @@
   $('#login').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
-    $.ajax({method: 'post', url: '/admin', data: form.serialize()})
-      .done(id => window.location.replace('/index'))
+    $.ajax({method: 'post', url: '/login', data: form.serialize()})
+      .done(id => window.location.replace('/admin'))
       .fail(error => alert("could not login"));
   });
   </script>
