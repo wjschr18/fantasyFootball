@@ -26,7 +26,9 @@
         $.ajax({method: 'post', url: '/teams/new', data: `${form.serialize()}&score=0&owner=testOwner`})
           .done(response.render('/viewTeam'))
           .fail(console.log(error.responseText));
-        $('textarea').empty();
+      });
+      $('#create').on('click', function(event){
+        $('#teamName').val('');
       });
 
     </script>
