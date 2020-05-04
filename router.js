@@ -22,7 +22,7 @@ router.get('/', function(request, response){
 
 router.post('/login', users.login);
 
-router.get('/admin', function(request, response){
+router.post('/admin', authorize, function(request, response){
   response.render('admin');
 });
 
