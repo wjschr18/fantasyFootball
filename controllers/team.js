@@ -14,6 +14,6 @@ module.exports.login = function(request, response, next) {
 
 module.exports.create = function(request, response, next) {
   Team.create(request.body)
-    .then(team => response.status(201).send(team.id))
+    .then(team => response.status(201).send(team.name))
     .catch(error => next(error));
 };
