@@ -31,7 +31,7 @@ module.exports.create = function(request, response, next) {
   //   response.status(400).send('Missing Name');
   // }else if(Team.find(t => t.name === teamRequest.name)){
   //   response.status(400).send('Duplicate Name');
-  } else {
+  // } else {
     Team.create(request.body)
       .then(team => response.status(201).send(team.name))
       .catch(error => next(error));
