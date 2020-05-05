@@ -29,10 +29,11 @@ module.exports.create = function(request, response, next) {
   const team = request.body;
   if (!team.name){
     response.status(400).send('Missing Name');
-  }
+  } else{
   Team.create(request.body)
     .then(team => response.status(201).send(team.name))
     .catch(error => next(error));
+  }
 };
 
 // module.exports.index = function(request, response) {
