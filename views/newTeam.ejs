@@ -21,6 +21,7 @@
       $('#newTeam').addClass('active');
 
       $('#create').on('click', function(event){
+        event.preventDefault();
         const form = $('#teamName');
         const teamName = form.serialize();
         $('#teamName').val('');
