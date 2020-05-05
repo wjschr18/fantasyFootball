@@ -35,7 +35,7 @@ module.exports.create = function(request, response, next) {
     Team.create(request.body)
       .then(team => response.status(201).send(team.name))
       .catch(error => next(error));
-  }
+  // }
 };
 
 // module.exports.index = function(request, response) {
