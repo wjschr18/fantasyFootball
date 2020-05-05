@@ -3,6 +3,7 @@ const session = require('express-session');
 const router = require('./router');
 const connect = require('./db');
 
+
 // Connect to the database
 connect();
 
@@ -34,6 +35,11 @@ app.use(function(request, response, next) {
   console.log('--------------------------', new Date().toLocaleTimeString());
   console.log(request.method, request.url);
   console.log('Body =', request.body);
+  next();
+});
+
+app.use(function(request, response, next) {
+  response.locals.user = request.session.user;
   next();
 });
 
