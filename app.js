@@ -3,7 +3,6 @@ const session = require('express-session');
 const router = require('./router');
 const connect = require('./db');
 
-
 // Connect to the database
 connect();
 
