@@ -26,10 +26,10 @@ module.exports.login = function(request, response, next) {
 // });
 
 module.exports.create = function(request, response, next) {
-  const team = request.body;
-  if (!team.name){
+  const teamRequest = request.body;
+  if (!teamRequest.name){
     response.status(400).send('Missing Name');
-  } else{
+  }else{
   Team.create(request.body)
     .then(team => response.status(201).send(team.name))
     .catch(error => next(error));
