@@ -13,6 +13,12 @@ router.get('/', function(request, response){
 
 router.post('/login', users.login);
 
+// Handle logout requests
+router.get('/logout', function(request, response) {
+  request.session.user = undefined;
+  response.redirect('/');
+});
+
 //add authorize
 router.post('/admin', function(request, response){
   response.render('admin');
