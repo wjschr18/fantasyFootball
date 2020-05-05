@@ -5,7 +5,7 @@
             <h2 id="title">Your Team</h2>
             <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
             <input type="text" id="team">
-            <button id="submit1">Go</button>
+            <button id="submit">Go</button>
             <h3 id="lastScore">Your Previous Score: </h3>
             <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
             <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
@@ -29,7 +29,7 @@
             <h5 id="teTdsL" class="ml-4 mt-2"> Receiving TDs: </h5>
             <input type="text" id="teT2" class="ml-4">
             <h5 id="filler">________________________</h5>
-            <button id="submit" class="mt-2">Submit Stats</button>
+            <button id="submit2" class="mt-2">Submit Stats</button>
             <script
               src="https://code.jquery.com/jquery-3.4.1.min.js"
               integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -64,6 +64,7 @@
               $('#teT2').hide();
               $('#filler').hide();
               $('#submit2').hide();
+
               $('#submit').on('click', function(event) {
                 event.preventDefault();
                 $('#title').remove();
@@ -93,8 +94,18 @@
                 $('#teT1').show();
                 $('#teT2').show();
                 $('#filler').show();
-                $('#submit2').show();
+                $('#submit').show();
               });
+              </script>
+              <script>
+              $('#submit2').on('submit', function(event){
+                const form = $('#score');
+                event.preventDefault();
+                $.ajax({method: 'post', url: '/teams/score', data: `${form.serialize()}&score=0&owner=testOwner`})
+                  .done(response.render('/viewTeam'))
+                  .fail(console.log(error.responseText));
+              });
+
             </script>
         </div>
       </div>
