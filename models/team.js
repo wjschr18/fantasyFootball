@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Team = new mongoose.Schema({
-  name: String,
+  name: {type: String, maxlength: 24, required: true},
   score: Number,
   owner: String
 });

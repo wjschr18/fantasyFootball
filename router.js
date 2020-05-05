@@ -8,14 +8,15 @@ const teams = require('./controllers/team');
 const router = express.Router();
 
 router.get('/', function(request, response){
-  response.render('index');
+  User.find().then(users => response.render('index', {users: users}));
 });
 
 router.post('/login', users.login);
 
-//add authorize
-router.post('/admin', function(request, response){
-  response.render('admin');
+// Handle logout requests
+router.get('/logout', function(request, response) {
+  request.session.user = undefined;
+  response.redirect('/');
 });
 
 router.get('/teams/new', function(request, response){

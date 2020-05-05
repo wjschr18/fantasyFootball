@@ -17,13 +17,13 @@ app.set('views', './views');
 // Parse request bodies like query strings
 app.use(express.urlencoded({extended: false}));
 
-// // // Generate a session for each client
-// app.use(session({
-//   name: 'fantasyFootball', // Name of client cookies
-//   secret: 'temporary', // Password for client cookies
-//   resave: false, // Recommended setting
-//   saveUninitialized: false // Recommended setting
-// }));
+// // Generate a session for each client
+app.use(session({
+  name: 'fantasyFootball', // Name of client cookies
+  secret: 'temporary', // Password for client cookies
+  resave: false, // Recommended setting
+  saveUninitialized: false // Recommended setting
+}));
 
 // Ignore icon requests
 app.get('/favicon.ico', function(request, response) {
