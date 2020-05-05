@@ -12,7 +12,24 @@ module.exports.login = function(request, response, next) {
     }).catch(error => next(error));
 };
 
+// // POST /flowers
+// router.post('/', function(request, response) {
+//   const flower = request.body;
+//   if (!flower.id) {
+//     response.status(400).send('Missing ID');
+//   } else if (flowers.find(f => f.id === flower.id)) {
+//     response.status(400).send('Duplicate ID');
+//   } else {
+//     flowers.push(flower);
+//     response.status(201).send(flowers);
+//   }
+// });
+
 module.exports.create = function(request, response, next) {
+  const team = request.body;
+  if (!team.name){
+    response.status(400).send('Missing Name');
+  }
   Team.create(request.body)
     .then(team => response.status(201).send(team.name))
     .catch(error => next(error));
