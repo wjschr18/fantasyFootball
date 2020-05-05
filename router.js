@@ -15,7 +15,7 @@ router.post('/login', users.login);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
-  request.session.user = undefined;
+  request.session.users = undefined;
   response.redirect('/');
 });
 
