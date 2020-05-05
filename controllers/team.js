@@ -27,7 +27,7 @@ module.exports.login = function(request, response, next) {
 
 module.exports.create = function(request, response, next) {
   const teamRequest = request.body;
-  if (!teamRequest.name){
+  if (teamRequest.name == ''){
     response.status(400).send('Missing Name');
   }else{
   Team.create(request.body)
