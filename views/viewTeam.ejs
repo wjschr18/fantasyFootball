@@ -94,11 +94,11 @@
                 $('#teT1').show();
                 $('#teT2').show();
                 $('#filler').show();
-                $('#submit').show();
+                $('#submit2').show();
               });
               </script>
               <script>
-              $('#submit2').on('submit', function(event){
+              $('#submit2').on('click', function(event){
                 const form = $('#score');
                 event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `${form.serialize()}&score=0&owner=testOwner`})
