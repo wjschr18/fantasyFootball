@@ -29,7 +29,7 @@ module.exports.create = function(request, response, next) {
   const teamRequest = request.body;
   if (!teamRequest.name){
     response.status(400).send('Missing Name');
-  }else if(Team.retrieve(t => t.name === teamRequest.name)){
+  }else if(Team.find(t => t.name === teamRequest.name)){
     response.status(400).send('Duplicate Name');
   } else {
     Team.create(request.body)
