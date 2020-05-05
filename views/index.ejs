@@ -2,7 +2,7 @@
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
   <body>
-    <!-- <div class="card m-3">
+    <div class="card m-3">
     <div class="card m-3">
       <div class="card-header bg-secondary text-light">Please Sign In</div>
     </div>
@@ -11,8 +11,8 @@
     <h6 id="password">Password</h6>
     <input type="text" id="password" class="ml-4">
     <button type="submit" id="login" class="btn btn-info btn-block">Sign in</button>
-    </div> -->
-    <!-- <%_ if (!users) { -%> -->
+    </div>
+    <%_ if (!users) { -%>
       <form>
         <input type="text" name="id" id="id">
         <button id="Login">Login</button>
@@ -28,9 +28,9 @@
             .fail(error => alert('Could not log in.'));
         })
       </script>
-    <!-- <%_ } else { -%>
+    <%_ } else { -%>
       <p>Hello, <%= users.name -%>!</p>
       <a href="/logout">Logout</a>
-    <%_ } -%> -->
+    <%_ } -%>
   </body>
 </html>
