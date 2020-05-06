@@ -12,18 +12,17 @@
       </form>
     </div>
   </div>
-
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-      <script> // Log in
-        $('#login').on('submit', function(event) {
-          const form = $(this);
-          event.preventDefault();
-          console.log("test");
-          $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.reload())
-            .fail(error => alert('Could not log in.'));
-        })
-      </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script> // Log in
+      $('#login').on('submit', function(event) {
+        const form = $(this);
+        event.preventDefault();
+        console.log("test");
+        $.ajax({method: 'post', url: '/login', data: form.serialize()})
+          .done(() => window.location.reload())
+          .fail(error => alert('Could not log in.'));
+      })
+    </script>
     <%_ } else { -%>
       <head> <a href="/logout">Logout</a> </head>
       <p>Hello, <%= user._id -%>!</p>
@@ -51,6 +50,7 @@
         </div>
       </div>
     </main>
+    
     <%_ } -%>
   </body>
 </html>
