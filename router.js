@@ -11,13 +11,11 @@ router.get('/', function(request, response){
   User.find().then(users => response.render('index', {users: users}));
 });
 
-router.post('/login', function(request, response) {
-  response.redirect('/homepage');
-});
+router.post('/login', users.login);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
-  request.session.users = undefined;
+  request.session.user = undefined;
   response.redirect('/');
 });
 
