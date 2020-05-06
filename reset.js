@@ -16,17 +16,17 @@ const users = [
 const teams = [
   new Team({
     owner: 'Will',
-    name: 'Wills Team',
+    id: 'Wills Team',
     score: 0
   }),
   new Team({
     owner: 'Matt',
-    name: 'Matts Team',
+    id: 'Matts Team',
     score: 0
   }),
   new Team({
     owner: 'Riley',
-    name: 'Rileys Team',
+    id: 'Rileys Team',
     score: 0
   })
 ];

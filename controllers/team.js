@@ -1,7 +1,7 @@
 const Team = require('../models/team');
 
 module.exports.login = function(request, response, next) {
-  Team.findById(request.body.name)
+  Team.findById(request.body.id)
     .then(function(team) {
       if (team) {
         request.session.team = team;
@@ -14,7 +14,7 @@ module.exports.login = function(request, response, next) {
 
 module.exports.create = function(request, response, next) {
     Team.create(request.body)
-      .then(team => response.status(201).send(team.name))
+      .then(team => response.status(201).send(team.id))
       .catch(error => next(error));
   // }
 };
@@ -24,5 +24,5 @@ module.exports.create = function(request, response, next) {
 // };
 
 module.exports.retrieve = function(request, response) {
-  response.send(`GET /teams/${request.params.name}`);
+  response.send(`GET /teams/${request.params.id}`);
 };
