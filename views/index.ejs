@@ -20,7 +20,7 @@
           event.preventDefault();
           console.log("test");
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(users => window.location.reload())
+            .done(() => window.location.reload('/admin'))
             .fail(error => alert('Could not log in.'));
         })
       </script>
