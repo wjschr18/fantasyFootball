@@ -1,7 +1,7 @@
 const User = require('../models/user');
 
 module.exports.login = function(request, response, next) {
-  User.findById(request.body.id)
+  User.findById(request.body._id)
     .then(function(user) {
       if (user) {
         request.session.user = user;

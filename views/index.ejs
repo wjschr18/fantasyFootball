@@ -6,17 +6,17 @@
     <div class="card m-3">
       <div class="card-header bg-secondary text-light">Please Sign In</div>
     </div>
-    <h6 id="username">Username</h6>
-    <input type="text" id="username" class="ml-4">
-    <h6 id="password">Password</h6>
-    <input type="text" id="password" class="ml-4">
-    <button type="submit" id="login" class="btn btn-info btn-block">Sign in</button>
+    <form id="login">
+    <h6>Username</h6>
+    <input type="text" name="_id" class="ml-4">
+    <button type="submit" class="btn btn-info btn-block">Sign in</button>
+    </form>
     </div>
     <%_ if (!user) { -%>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
         $('#login').on('submit', function(event) {
-          const form = $('#id');
+          const form = $(this);
           event.preventDefault();
           console.log("test");
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
