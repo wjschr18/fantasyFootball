@@ -20,7 +20,7 @@ router.get('/logout', function(request, response) {
 });
 
 router.get('/teams/new', function(request, response){
-  Team.find().then(teams => response.render('newTeam', {teams: teams}));
+  Team.find().then(teams => response.render('newTeam', {teams: teams}, {users: users}));
 });
 
 router.get('/teams', function(request, response){
