@@ -20,8 +20,12 @@ router.get('/logout', function(request, response) {
 });
 
 router.get('/teams/new', function(request, response){
+<<<<<<< HEAD
   Team.find().then(teams => User.find().then(users => response.render(
     'newTeam', {teams: teams}, {users: users}))):
+=======
+  Team.find().then(teams => User.find().then(users => response.render('newTeam', {teams: teams}, {users: users}))):
+>>>>>>> 8fe4d1d2416ecd25127b31c04da19363d9262412
 });
 
 router.get('/teams', function(request, response){
