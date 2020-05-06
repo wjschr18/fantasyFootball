@@ -15,12 +15,12 @@
     <%_ if (!users) { -%>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script> // Log in
-        $('#login').on('click', function(event) {
+        $('#login').on('submit', function(event) {
           const form = $('#id');
           event.preventDefault();
           console.log("test");
           $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.reload())
+            .done(users => window.location.reload())
             .fail(error => alert('Could not log in.'));
         })
       </script>
