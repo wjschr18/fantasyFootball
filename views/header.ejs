@@ -4,9 +4,9 @@
     <span class="text-light pl-2" id="headText">Fantasy Football</span>
   </a>
   <%_ if (user) { -%>
-    <ul class="list-inline">
+    <ul class="list-inline ml-auto">
       <li class="list-inline-item"><p>Hello, <%= user._id -%>!</p></li>
-      <li class="list-inline-item"><button type="button" name="logout" class="btn btn-outline-light" href="/logout">Logout</button></li>
+      <li class="list-inline-item"><a class="btn btn-outline-light" href="/logout">Logout</a></li>
     </ul>
   <%_ } -%>
 
