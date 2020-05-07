@@ -2,8 +2,9 @@
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
   <body>
-    <%- include('./login'); -%>
-    <%_ else { -%>
+    <%_ if (!user) { -%>
+      <%- include('./login'); -%>
+    <%_ } else { -%>
       <main>
       <h2 class="">Welcome To The Fantasy Football League!</h2>
       <div class="row">
