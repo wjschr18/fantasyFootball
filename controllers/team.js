@@ -19,6 +19,13 @@ module.exports.create = function(request, response, next) {
   // }
 };
 
+// DELETE /team/:id
+module.exports.delete = function(request, response, next) {
+  Team.findByIdAndDelete(request.params.id)
+    .then(team => team ? response.status(200).end() : next())
+    .catch(error => next(error));
+};
+
 // module.exports.index = function(request, response) {
 //   response.send('GET /teams');
 // };

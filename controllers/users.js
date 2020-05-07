@@ -18,16 +18,16 @@ module.exports.create = function(request, response, next) {
     .catch(error => next(error));
 };
 
-// DELETE /courses/:id
+// DELETE /user/:id
 module.exports.delete = function(request, response, next) {
   User.findByIdAndDelete(request.params.id)
-    .then(course => course ? response.status(200).end() : next())
+    .then(user => user ? response.status(200).end() : next())
     .catch(error => next(error));
 };
 
-// PUT /courses/:id (with the changes in the request body)
+// PUT /user/:id (update team/add team to user)
 module.exports.update = function(request, response, next) {
-  Course.findByIdAndUpdate(request.params.id, request.body)
+  User.findByIdAndUpdate(request.params.id, request.body)
     .then(course => course ? response.status(200).end() : next())
     .catch(error => next(error));
 };
