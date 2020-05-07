@@ -3,4 +3,35 @@
     <img src="https://static.nfl.com/static/content/public/static/wildcat/assets/img/application-shell/shield/default.svg" style="width: 50px">
     <span class="text-light pl-2" id="headText">Fantasy Football</span>
   </a>
+  <%_ if (user) { -%>
+    <ul class="list-inline">
+      <li class="list-inline-item"><p>Hello, <%= user._id -%>!</p></li>
+      <li class="list-inline-item"><button type="button" name="logout" class="btn btn-outline-light" href="/logout">Logout</button></li>
+    </ul>
+  <%_ } -%>
+
 </header>
+<%_ if (!user) { -%>
+<div class="card m-3">
+<div class="card-header bg-secondary text-light">Please Sign In</div>
+  <form id="login">
+    <h6>Username</h6>
+    <input type="text" name="_id" class="ml-4">
+    <button type="submit" class="btn btn-info btn-block">Sign in</button>
+  </form>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script> // Log in
+  $('#login').on('submit', function(event) {
+    const form = $(this);
+    event.preventDefault();
+    console.log("test");
+    $.ajax({method: 'post', url: '/login', data: form.serialize()})
+      .done(() => window.location.reload())
+      .fail(error => alert('Could not log in.'));
+  })
+</script>
+<%_ } else { -%>
+  <head> <a href="/logout">Logout</a> </head>
+  <p>Hello, <%= user._id -%>!</p>

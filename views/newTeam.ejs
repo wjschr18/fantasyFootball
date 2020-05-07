@@ -2,30 +2,7 @@
 <html>
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
-  <%_ if (!user) { -%>
-<div class="card m-3">
-  <div class="card-header bg-secondary text-light">Please Sign In</div>
-    <form id="login">
-      <h6>Username</h6>
-      <input type="text" name="_id" class="ml-4">
-      <button type="submit" class="btn btn-info btn-block">Sign in</button>
-    </form>
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script> // Log in
-    $('#login').on('submit', function(event) {
-      const form = $(this);
-      event.preventDefault();
-      console.log("test");
-      $.ajax({method: 'post', url: '/login', data: form.serialize()})
-        .done(() => window.location.reload())
-        .fail(error => alert('Could not log in.'));
-    })
-  </script>
-  <%_ } else { -%>
-    <head> <a href="/logout">Logout</a> </head>
-    <p>Hello, <%= user._id -%>!</p>
+
     <h2>Team Management</h2>
     <div class="card">
       <div class="card-body">
@@ -53,9 +30,9 @@
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
           .done(console.log(form.val()))
           .fail(console.log(error.responseText));
-        $.ajax({method: 'put', url: `/user/${user._id}`, data: `_id=${user._id}&teams=${user.teams.push(form.val())}`})
-          .done(() => window.location.reload())
-          .fail(console.log(error.responseText));
+        // $.ajax({method: 'put', url: `/user/${user._id}`, data: `_id=${user._id}&teams=${user.teams.push(form.val())}`})
+        //   .done(() => window.location.reload())
+        //   .fail(console.log(error.responseText));
       });
 
     </script>
