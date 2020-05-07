@@ -26,12 +26,12 @@
         const teamName = form.serialize();
         $('#teamName').val('');
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
-          .done($.ajax({method: 'put', url: `/user/${user._id}`, data: `id=${user.id}&teams=${user.teams.push(form.val())}`})
+          .done($.ajax({method: 'put', url: `/user/${session.user._id}`, data: `id=${session.user.id}&teams=${session.user.teams.push(form.val())}`})
             .done(response.render('/viewTeam'))
             .fail(console.log(error.responseText)))
           .fail(console.log(error.responseText));
 
-        console.log(`${user._id}, ${user.teams}`);
+        console.log(`${session.user._id}, ${session.user.teams}`);
       });
 
     </script>
