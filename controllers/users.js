@@ -24,8 +24,8 @@ module.exports.delete = function(request, response, next) {
   User.findByIdAndDelete(request.params._id)
     .then(user => user ? response.status(200).end() : next())
     .catch(error => next(error));
-  } else {
-    response.status(403).send('Forbidden Access');
+  // } else {
+  //   response.status(403).send('Forbidden Access');
   // }
 };
 
@@ -35,7 +35,7 @@ module.exports.update = function(request, response, next) {
   User.findByIdAndUpdate(request.params._id, request.body)
     .then(user => user ? response.status(200).end() : next())
     .catch(error => next(error));
-  } else {
-    response.status(403).send('Forbidden Access');
+  // } else {
+  //   response.status(403).send('Forbidden Access');
   // }
 };
