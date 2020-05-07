@@ -33,7 +33,7 @@ module.exports.delete = function(request, response, next) {
 module.exports.update = function(request, response, next) {
   if (request.session.user.id === request.params.id){
   User.findByIdAndUpdate(request.params.id, request.body)
-    .then(course => course ? response.status(200).end() : next())
+    .then(user => user ? response.status(200).end() : next())
     .catch(error => next(error));
   } else {
     response.status(403).send('Forbidden Access');
