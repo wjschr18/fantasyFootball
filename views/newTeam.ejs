@@ -2,7 +2,9 @@
 <html>
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
-
+  <%_ if (!user) { -%>
+    <%- include('./login'); -%>
+  <%_ } else { -%>
     <h2>Team Management</h2>
     <div class="card">
       <div class="card-body">
