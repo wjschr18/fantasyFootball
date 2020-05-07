@@ -37,7 +37,7 @@ router.get('/teams/scores', function(request, response){
 router.post('/teams/new', teams.create); // add authorize later
 router.delete('/user/:id', users.delete);
 router.delete('/team/:id', teams.delete)
-router.put('/user/:id', users.update);
+router.put('/user/:_id', users.update);
 
 // Export the router
 module.exports = router;
