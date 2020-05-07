@@ -14,14 +14,14 @@ module.exports.login = function(request, response, next) {
 
 module.exports.create = function(request, response, next) {
   User.create(request.body)
-    .then(user => response.status(201).send(user.id))
+    .then(user => response.status(201).send(user._id))
     .catch(error => next(error));
 };
 
 // DELETE /user/:id
 module.exports.delete = function(request, response, next) {
-  if (request.session.user.id === request.params.id){
-  User.findByIdAndDelete(request.params.id)
+  if (request.session.user._id === request.params._id){
+  User.findByIdAndDelete(request.params._id)
     .then(user => user ? response.status(200).end() : next())
     .catch(error => next(error));
   } else {
@@ -31,8 +31,8 @@ module.exports.delete = function(request, response, next) {
 
 // PUT /user/:id (update team/add team to user)
 module.exports.update = function(request, response, next) {
-  if (request.session.user.id === request.params.id){
-  User.findByIdAndUpdate(request.params.id, request.body)
+  if (request.session.user._id === request.params._id){
+  User.findByIdAndUpdate(request.params._id, request.body)
     .then(user => user ? response.status(200).end() : next())
     .catch(error => next(error));
   } else {
