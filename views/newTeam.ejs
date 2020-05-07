@@ -53,6 +53,9 @@
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
           .done(response.render('/viewTeam'))
           .fail(console.log(error.responseText));
+        $.ajax({method: 'put', url: `/user/${user._id}`, data: `teams=${user.teams.push(form.val())}`})
+          .done(() => window.location.reload())
+          .fail(console.log(error.responseText));
       });
 
     </script>
