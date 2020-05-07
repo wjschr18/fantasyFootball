@@ -51,7 +51,7 @@
         const teamName = form.serialize();
         $('#teamName').val('');
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
-          .done(render('/viewTeam'))
+          .done(() => window.location.reload())
           .fail(console.log(error.responseText));
         $.ajax({method: 'put', url: `/user/${user._id}`, data: `teams=${user.teams.push(form.val())}`})
           .done(() => window.location.reload())
