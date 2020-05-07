@@ -2,6 +2,9 @@
 <html>
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
+  <%_ if (!user) { -%>
+    <%- include('./login'); -%>
+  <%_ } else { -%>
             <h2 id="title">Your Team</h2>
             <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
             <input type="text" id="team">
@@ -30,6 +33,7 @@
             <input type="text" id="teT2" class="ml-4">
             <h5 id="filler">________________________</h5>
             <button id="submit2" class="mt-2">Submit Stats</button>
+            <%_ } -%> <!-- for login.ejs -->
             <script
               src="https://code.jquery.com/jquery-3.4.1.min.js"
               integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
