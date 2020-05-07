@@ -2,7 +2,7 @@
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
   <body>
-    <%_ if (!user) { -%>
+    <!-- <%_ if (!user) { -%>
   <div class="card m-3">
     <div class="card-header bg-secondary text-light">Please Sign In</div>
       <form id="login">
@@ -25,7 +25,7 @@
     </script>
     <%_ } else { -%>
       <head> <a href="/logout">Logout</a> </head>
-      <p>Hello, <%= user._id -%>!</p>
+      <p>Hello, <%= user._id -%>!</p> -->
 
       <main>
       <h2 class="">Welcome To The Fantasy Football League!</h2>
@@ -50,7 +50,7 @@
         </div>
       </div>
     </main>
-    
+
     <%_ } -%>
   </body>
 </html>
