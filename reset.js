@@ -8,9 +8,18 @@ connect();
 
 // Model a collection of courses
 const users = [
-  new User({_id: 'Will'}),
-  new User({_id: 'Matt'}),
-  new User({_id: 'Riley'})
+  new User({
+    _id: 'Will',
+    teams: []
+  }),
+  new User({
+    _id: 'Riley',
+    teams: []
+  }),
+  new User({
+    _id: 'Matt',
+    teams: []
+  })
 ];
 
 const teams = [
