@@ -117,7 +117,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
               $('#submit2').on('click', function(event){
                 event.preventDefault();
                 const form = $(this);
-                let list = [];
+                let list = [0];
                 // Translate each input value into a list item
                 const inputs = form.find('input'); // JQuery object represent all inputs
                 for (let input of inputs) {
@@ -127,7 +127,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                   input.val(''); // Empty out the box
                 }
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${list}`})
-                  .done(console.log(list.val()))
+                  .done(console.log(list))
                   .fail(console.log(error.responseText));
               });
 
