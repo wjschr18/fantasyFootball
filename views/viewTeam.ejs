@@ -11,6 +11,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
+    <body>
           <h2 id="title">Your Team</h2>
           <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
           <input type="text" id="team">
@@ -50,34 +51,11 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
             <script>
               $('.active').removeClass('active');
               $('#myTeam').addClass('active');
-              
+
             </script>
             <script>
               $('#fm').hide();
-              $('#lastScore').hide();
-              $('#newScore').hide();
-              $('#qbLabel').hide();
-              $('#rbLabel').hide();
-              $('#wrLabel').hide();
-              $('#teLabel').hide();
-              $('#qbYdsL').hide();
-              $('#qbTdsL').hide();
-              $('#rbYdsL').hide();
-              $('#rbTdsL').hide();
-              $('#wrYdsL').hide();
-              $('#wrTdsL').hide();
-              $('#teYdsL').hide();
-              $('#teTdsL').hide();
-              $('#qbT1').hide();
-              $('#qbT2').hide();
-              $('#rbT1').hide();
-              $('#rbT2').hide();
-              $('#wrT1').hide();
-              $('#wrT2').hide();
-              $('#teT1').hide();
-              $('#teT2').hide();
-              $('#filler').hide();
-              $('#submit2').hide();
+
 
               $('#submit').on('click', function(event) {
                 event.preventDefault();
@@ -86,30 +64,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                 $('#text').remove();
                 $('#submit').remove();
                 $('#fm').show();
-                $('#lastScore').show();
-                $('#newScore').show();
-                $('#qbLabel').show();
-                $('#rbLabel').show();
-                $('#wrLabel').show();
-                $('#teLabel').show();
-                $('#qbYdsL').show();
-                $('#qbTdsL').show();
-                $('#rbYdsL').show();
-                $('#rbTdsL').show();
-                $('#wrYdsL').show();
-                $('#wrTdsL').show();
-                $('#teYdsL').show();
-                $('#teTdsL').show();
-                $('#qbT1').show();
-                $('#qbT2').show();
-                $('#rbT1').show();
-                $('#rbT2').show();
-                $('#wrT1').show();
-                $('#wrT2').show();
-                $('#teT1').show();
-                $('#teT2').show();
-                $('#filler').show();
-                $('#submit2').show();
+          
               });
               </script>
               <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -133,4 +88,5 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
             </script>
         </div>
       </div>
+    </body>
 </html>
