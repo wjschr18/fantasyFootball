@@ -123,7 +123,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                 for (let input of inputs) {
                   input = $(input); // Turn into a JQuery object
                   const li = input.val(); // New list item
-                  ins.push(li);
+                  ins.push(li.parseInt());
                   input.val(''); // Empty out the box
                 }
                 let total = 0;
