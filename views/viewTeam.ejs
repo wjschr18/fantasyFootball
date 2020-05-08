@@ -113,8 +113,8 @@
                 const tetotal = $('#teT1') + $('#teT2');
                 const total = qtotal + rtotal + wrtotal + tetotal;
                 event.preventDefault();
-                $.ajax({method: 'post', url: '/teams/score', data: `${form.serialize()}&score=${total}`})
-                  .done(response.render('/viewTeam'))
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
+                  .done(response.render(form.val()))
                   .fail(console.log(error.responseText));
               });
 
