@@ -109,12 +109,12 @@
                 event.preventDefault();
                 //const form =
                 const qtotal = $('#qbT1').val() + $('#qbT2').val();
-                const rtotal = $('#rbT1') + $('#rbT2');
-                const wrtotal = $('#wrT1') + $('#wrT2');
-                const tetotal = $('#teT1') + $('#teT2');
+                const rtotal = $('#rbT1').val() + $('#rbT2').val();
+                const wrtotal = $('#wrT1').val() + $('#wrT2').val();
+                const tetotal = $('#teT1').val() + $('#teT2').val();
                 const total = qtotal + rtotal + wrtotal + tetotal;
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${qtotal}`})
-                  .done(console.log(qtotal.val()))
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
+                  .done(console.log(total.val()))
                   .fail(console.log(error.responseText));
               });
 
