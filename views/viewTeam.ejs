@@ -16,7 +16,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
           <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
           <input type="text" id="team">
           <button id="submit">Go</button>
-          <form id="fm">
+          <form>
             <h3 id="lastScore">Your Previous Score: </h3>
             <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
             <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
@@ -54,7 +54,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
 
             </script>
             <script>
-              $('#fm').hide();
+              $('form').hide();
 
 
               $('#submit').on('click', function(event) {
@@ -63,8 +63,8 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                 $('#instructions').remove();
                 $('#text').remove();
                 $('#submit').remove();
-                $('#fm').show();
-          
+                $('form').show();
+                
               });
               </script>
               <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
