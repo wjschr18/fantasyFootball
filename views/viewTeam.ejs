@@ -109,14 +109,14 @@
                 //const form = $('#score');
                 const qtotal = $('#qbT1'); // + $('#qbT2').value;
                 const qbscore = qtotal.serialize();
-                qbscore.val('')
+                $('#qbT1').val('');
                 const rtotal = $('#rbT1') + $('#rbT2');
                 const wrtotal = $('#wrT1') + $('#wrT2');
                 const tetotal = $('#teT1') + $('#teT2');
                 const total = qtotal + rtotal + wrtotal + tetotal;
                 event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${qbscore}`})
-                  .done(response.render(form.val()))
+                  .done(response.render(qtotal.val()))
                   .fail(console.log(error.responseText));
               });
 
