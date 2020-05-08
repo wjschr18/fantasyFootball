@@ -107,14 +107,13 @@
               <script>
               $('#submit2').on('click', function(event){
                 event.preventDefault();
-                const qtotal = $('#qbT1'); // + $('#qbT2').value;
-                const qbscore = qtotal.serialize();
-                const q = $('#qbT1').val('');
+                //const form =
+                const qtotal = $('#qbT1').val() + $('#qbT2').val();
                 const rtotal = $('#rbT1') + $('#rbT2');
                 const wrtotal = $('#wrT1') + $('#wrT2');
                 const tetotal = $('#teT1') + $('#teT2');
                 const total = qtotal + rtotal + wrtotal + tetotal;
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${qbscore}&${q}&${qtotal.val()}`})
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${qtotal}`})
                   .done(console.log(qtotal.val()))
                   .fail(console.log(error.responseText));
               });
