@@ -123,12 +123,13 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                 for (let input of inputs) {
                   input = $(input); // Turn into a JQuery object
                   const li = input.val(); // New list item
-                  ins.push(li.parseInt());
+                  ins.push(li);
                   input.val(''); // Empty out the box
                 }
                 let total = 0;
                 for (let i = 0; i < ins.length; i++) {
-                  total = total + ins[i];
+                  let num = Number(ins[i])
+                  total = total + num;
                 }
                 event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
