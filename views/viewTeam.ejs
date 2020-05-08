@@ -127,13 +127,13 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                   input.val(''); // Empty out the box
                 }
                 let total = 0;
-                for (let i in x) {
+                for (let i of x) {
                   total = s + i;
                   let s = i;
                 }
                 event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
-                  .done(console.log(s))
+                  .done(console.log(x))
                   .fail(console.log(error.responseText));
               });
 
