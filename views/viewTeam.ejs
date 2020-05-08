@@ -126,9 +126,13 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                   x.push(li);
                   input.val(''); // Empty out the box
                 }
+                for (let i in x) {
+                  const total = s + i;
+                  const s = i;
+                }
                 event.preventDefault();
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${x}`})
-                  .done(console.log(x))
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
+                  .done(console.log(s))
                   .fail(console.log(error.responseText));
               });
 
