@@ -103,11 +103,12 @@
                 $('#submit2').show();
               });
               </script>
+              <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
               <script>
               $('#submit2').on('click', function(event){
                 const form = $('#score');
                 const qtotal = $('#qbT1').value + $('#qbT2');
-                const rtotal = $('#rbT1') + ('#rbT2');
+                const rtotal = $('#rbT1') + $('#rbT2');
                 const wrtotal = $('#wrT1') + $('#wrT2');
                 const tetotal = $('#teT1') + $('#teT2');
                 const total = qtotal + rtotal + wrtotal + tetotal;
