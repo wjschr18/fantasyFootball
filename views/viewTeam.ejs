@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html
+#submit2
+const qtotal = $('#qbT1').val().toInteger + int($('#qbT2').val());
+const rtotal = $('#rbT1').val() + $('#rbT2').val();
+const wrtotal = $('#wrT1').val() + $('#wrT2').val();
+const tetotal = $('#teT1').val() + $('#teT2').val();
+const total = qtotal + rtotal + wrtotal + tetotal;>
 <html>
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
@@ -9,7 +15,7 @@
           <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
           <input type="text" id="team">
           <button id="submit">Go</button>
-
+          <form>
             <h3 id="lastScore">Your Previous Score: </h3>
             <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
             <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
@@ -34,7 +40,7 @@
             <input type="text" id="teT2" class="ml-4">
             <h5 id="filler">________________________</h5>
             <button id="submit2" class="mt-2">Submit Stats</button>
-
+          </form>
             <%_ } -%> <!-- for login.ejs -->
             <script
               src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -105,17 +111,20 @@
               </script>
               <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
               <script>
-              $('#submit2').on('click', function(event){
+              $('form').on('click', function(event){
                 event.preventDefault();
-                //const form =
-                const qtotal = int($('#qbT1').val()) + int($('#qbT2').val());
-                const rtotal = $('#rbT1').val() + $('#rbT2').val();
-                const wrtotal = $('#wrT1').val() + $('#wrT2').val();
-                const tetotal = $('#teT1').val() + $('#teT2').val();
-                const total = qtotal + rtotal + wrtotal + tetotal;
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${qtotal}`})
-                  .done(console.log(total.val()))
-                  .fail(console.log(error.responseText));
+                const form = $(this);
+                // Translate each input value into a list item
+                const inputs = form.find('input'); // JQuery object represent all inputs
+                for (let input of inputs) {
+                  input = $(input); // Turn into a JQuery object
+                  const li = $(`<li>${input.val()}</li>`); // New list item
+                  list.append(li);
+                  input.val(''); // Empty out the box
+                }
+                //$.ajax({method: 'post', url: '/teams/score', data: `score=${qtotal}`})
+                  //.done(console.log(total.val()))
+                  //.fail(console.log(error.responseText));
               });
 
             </script>
