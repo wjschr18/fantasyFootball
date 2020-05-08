@@ -108,12 +108,12 @@
               $('#submit2').on('click', function(event){
                 event.preventDefault();
                 //const form =
-                const qtotal = $('#qbT1').val() + $('#qbT2').val();
+                const qtotal = int($('#qbT1').val()) + int($('#qbT2').val());
                 const rtotal = $('#rbT1').val() + $('#rbT2').val();
                 const wrtotal = $('#wrT1').val() + $('#wrT2').val();
                 const tetotal = $('#teT1').val() + $('#teT2').val();
                 const total = qtotal + rtotal + wrtotal + tetotal;
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${qtotal}`})
                   .done(console.log(total.val()))
                   .fail(console.log(error.responseText));
               });
