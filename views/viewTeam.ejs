@@ -119,15 +119,15 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
 
                 // Translate each input value into a list item
                 const inputs = form.find('input'); // JQuery object represent all inputs
-                let x = [];
+                let ins = [];
                 for (let input of inputs) {
                   input = $(input); // Turn into a JQuery object
                   const li = input.val(); // New list item
-                  x.push(li);
+                  ins.push(li);
                   input.val(''); // Empty out the box
                 }
                 let total = 0;
-                for (let i of x) {
+                for (let i = 0; i < ins.length(); i++) {
                   total = s + i;
                   let s = i;
                 }
