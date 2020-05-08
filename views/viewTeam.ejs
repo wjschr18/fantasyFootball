@@ -114,20 +114,21 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
               </script>
               <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
               <script>
-              $('#submit2').on('click', function(event){
-                event.preventDefault();
+              $('form').on('click', function(event){
                 const form = $(this);
-                let list = [];
+
                 // Translate each input value into a list item
                 const inputs = form.find('input'); // JQuery object represent all inputs
+                let x = [];
                 for (let input of inputs) {
                   input = $(input); // Turn into a JQuery object
                   const li = input.val(); // New list item
-                  list.push(li);
+                  x.push(li);
                   input.val(''); // Empty out the box
                 }
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${list}`})
-                  .done(console.log(list))
+                event.preventDefault();
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${x}`})
+                  .done(console.log(x))
                   .fail(console.log(error.responseText));
               });
 
