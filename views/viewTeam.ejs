@@ -128,8 +128,7 @@ const total = qtotal + rtotal + wrtotal + tetotal;>
                 }
                 let total = 0;
                 for (let i = 0; i < ins.length(); i++) {
-                  total = s + i;
-                  let s = i;
+                  total = total + ins[i];
                 }
                 event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
