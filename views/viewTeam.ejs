@@ -106,7 +106,7 @@
               <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
               <script>
               $('#submit2').on('click', function(event){
-                //const form = $('#score');
+                event.preventDefault();
                 const qtotal = $('#qbT1'); // + $('#qbT2').value;
                 const qbscore = qtotal.serialize();
                 const q = $('#qbT1').val('');
@@ -114,9 +114,8 @@
                 const wrtotal = $('#wrT1') + $('#wrT2');
                 const tetotal = $('#teT1') + $('#teT2');
                 const total = qtotal + rtotal + wrtotal + tetotal;
-                event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${qbscore}&${q}&${qtotal.val()}`})
-                  .done(response.render(qtotal.val()))
+                  .done(console.log(qtotal.val()))
                   .fail(console.log(error.responseText));
               });
 
