@@ -27,11 +27,15 @@ router.get('/teams/new', function(request, response){
 });
 
 router.get('/teams', function(request, response){
-  User.find().then(users => response.render('viewTeam', {users: users}));
+  User.find().then(users => response.render('teamScore', {users: users}));
 });
 
 router.get('/teams/scores', function(request, response){
   Team.find().then(teams => response.render('leagueScores', {teams: teams}));
+});
+
+router.get('/teams/manage', function(request, response){
+  Team.find().then(teams => response.render('myTeams', {teams: teams}));
 });
 
 //Handle course requests
