@@ -9,33 +9,30 @@ connect();
 // Model a collection of courses
 const users = [
   new User({
-    _id: 'Will',
-    teams: ['one', 'two']
+    _id: 'Will'
   }),
   new User({
-    _id: 'Riley',
-    teams: []
+    _id: 'Riley'
   }),
   new User({
-    _id: 'Matt',
-    teams: []
+    _id: 'Matt'
   })
 ];
 
 const teams = [
   new Team({
-    //owner: 'Will',
-    id: 'Wills Team',
+    owner: 'Will',
+    _id: 'Wills Team',
     score: 0
   }),
   new Team({
-    //owner: 'Matt',
-    id: 'Matts Team',
+    owner: 'Matt',
+    _id: 'Matts Team',
     score: 0
   }),
   new Team({
-    //owner: 'Riley',
-    id: 'Rileys Team',
+    owner: 'Riley',
+    _id: 'Rileys Team',
     score: 0
   })
 ];
