@@ -39,6 +39,7 @@ app.use(function(request, response, next) {
 
 app.use(function(request, response, next) {
   response.locals.user = request.session.user;
+  response.locals.team = request.session.team;
   next();
 });
 
