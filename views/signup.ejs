@@ -18,6 +18,7 @@
           const form = $('#userName');
           const userName = form.serialize();
           $('#userName').val('');
+          user._id = userName;
           $.ajax({method: 'post', url: '/signup', data: `${userName}&score=0`})
             .done(() => window.location.replace('/teams'))
             .fail(error => alert(error.responseText));
@@ -27,8 +28,8 @@
           const form = $('#teamName');
           const teamName = form.serialize();
           $('#teamName').val('');
-          $.ajax({method: 'post', url: '/signup', data: `${teamName}&score=0`})
-            .done(() => window.location.replace('/teams'))
+          team.id = teamName;
+          $.ajax({method: 'post', url: '/signup', data: `id=${teamName}&score=0`})
             .fail(error => alert(error.responseText));
         });
       </script>
