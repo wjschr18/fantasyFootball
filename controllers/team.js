@@ -13,6 +13,8 @@ module.exports.login = function(request, response, next) {
 };
 
 module.exports.create = function(request, response, next) {
+  request.body.score = 0;
+  request.body.owner = request.session.user._id;
     Team.create(request.body)
       .then(team => response.status(201).send(team.id))
       .catch(error => next(error));
