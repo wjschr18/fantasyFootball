@@ -5,7 +5,7 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    
+
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Create A New Team</h5>
@@ -26,7 +26,7 @@
         event.preventDefault();
         teamName = $('#teamName').serialize();
         //team.score = 0;
-        $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score= <%= team.score -%>`})
+        $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score= 0`})
           .done(() => window.location.replace('/teams'))
           .fail(error => alert(error.responseText));
       });
