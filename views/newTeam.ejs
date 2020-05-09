@@ -26,7 +26,7 @@
         event.preventDefault();
         teamName = $('#teamName').serialize();
         //team.score = 0;
-        $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
+        $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score= <%= team.score -%>`})
           .done(() => window.location.replace('/teams'))
           .fail(error => alert(error.responseText));
       });
@@ -36,7 +36,7 @@
         teamName = $('#teamName').val();
         $('#teamName').val('');
         //user.teams.push(teamName); // this doesn't work
-        $.ajax({method: 'put', url: `/user/<%= user._id -%>`, data: `_id=<%= user._id -%>&teams=<%= user.teams.push(${teamName}) -%>`})
+        $.ajax({method: 'put', url: `/user/<%= user._id -%>`, data: `_id=<%= user._id -%>&teams= <%= user.teams -%>`})
           .fail(error => alert(error.responseText));
       });
     </script>
