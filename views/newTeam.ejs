@@ -30,12 +30,20 @@
         event.preventDefault();
         const form = $('#teamName');
         const teamName = form.serialize();
-        $('#teamName').val('');
+        //$('#teamName').val('');
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
-          .done(console.log(form.val()));
-          .fail(console.log(error.responseText));
+          .done(id => window.location.replace(`/courses/${id}`));
+          .fail(error => alert(error.responseText));
       });
 
-      
+      $('#update').on('click', function(event){
+        event.preventDefault();
+        const form = $('#teamName');
+        const tName = form.serialize();
+        <%= user.teams.push(tName) -%>
+        $.ajax({method: 'put', url: '/user/<%= user._id -%>', data: `_id=<%= user._id -%>&teams=<%= user.teams -%>`})
+          .done(console.log(tName));
+          .fail(error => alert(error.responseText));
+      });
     </script>
 </html>

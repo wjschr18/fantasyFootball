@@ -128,7 +128,7 @@
                 event.preventDefault();
                 $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
                   .done(console.log(x))
-                  .fail(console.log(error.responseText));
+                  .fail(cerror => alert(error.responseText));
               });
 
             </script>
