@@ -11,6 +11,7 @@
         <input type="text" class="pr-3" id="teamName" name="id" value="">
         <button id="create" class="btn btn-primary ml-2">Create Your Account and Team</button>
       </div>
+    </form>
     <script>
         $('#create').on('click', function(event){
           event.preventDefault();
@@ -22,6 +23,7 @@
             .fail(error => alert(error.responseText));
         });
 
+        $('#create').on('click', function(event){
           const form = $('#teamName');
           const teamName = form.serialize();
           $('#teamName').val('');
@@ -29,8 +31,6 @@
             .done(() => window.location.replace('/teams'))
             .fail(error => alert(error.responseText));
         });
-
       </script>
-    </form>
     </body>
 </html>

@@ -127,7 +127,7 @@
                 }
                 event.preventDefault();
                 team.score = total;
-                $.ajax({method: 'post', url: '/teams/score', data: `score=0`})
+                $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
                   .done(() => window.location.replace('/teams/score'))
                   .fail(cerror => alert(error.responseText));
               });
