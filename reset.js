@@ -10,7 +10,7 @@ connect();
 const users = [
   new User({
     _id: 'Will',
-    teams: [one]
+    teams: ['one', 'two']
   }),
   new User({
     _id: 'Riley',
