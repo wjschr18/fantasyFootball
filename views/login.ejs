@@ -25,7 +25,7 @@
   $(#signup).on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
-    $.ajax({method: 'post', url: '/login', data: form.serialize()})
+    $.ajax({method: 'post', url: '/signup', data: form.serialize()})
       .done(() => window.location.reload()))
       .fail(error => alert('Could not log in.'));
   });
