@@ -32,7 +32,7 @@
         const teamName = form.serialize();
         $('#teamName').val('');
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
-          .done(id => window.location.replace(`/courses/${id}`))
+          .done(() => window.location.replace('/teams/scores'))
           .fail(error => alert(error.responseText));
       });
 
