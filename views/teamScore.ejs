@@ -7,12 +7,11 @@
   <%_ } else { -%>
     <body>
       <form>
-          <h2 id="title">Your Team</h2>
-          <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name below to view and update your team's score.</p>
+          <h2 id="title">Your Team's Score</h2>
+          <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name and update your team's score.</p>
           <input type="text" id="team">
           <button id="submit">Go</button>
 
-            <h3 id="lastScore">Your Previous Score: </h3>
             <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
             <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
             <h5 id="qbYdsL" class="ml-4"> Passing Yards: </h5>
@@ -49,8 +48,6 @@
 
             </script>
             <script>
-              $('#lastScore').hide();
-              $('#newScore').hide();
               $('#qbLabel').hide();
               $('#rbLabel').hide();
               $('#wrLabel').hide();
@@ -80,8 +77,6 @@
                 $('#instructions').remove();
                 $('#text').remove();
                 $('#submit').remove();
-                $('#lastScore').show();
-                $('#newScore').show();
                 $('#qbLabel').show();
                 $('#rbLabel').show();
                 $('#wrLabel').show();
