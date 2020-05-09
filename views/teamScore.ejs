@@ -5,7 +5,6 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    <body>
       <form>
           <h2 id="title">Your Team's Score</h2>
           <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name and update your team's score.</p>
@@ -45,6 +44,7 @@
             <script>
               $('.active').removeClass('active');
               $('#myTeam').addClass('active');
+              
             </script>
             <script>
               $('#qbLabel').hide();
@@ -129,5 +129,6 @@
             </script>
         </div>
       </div>
+    </main>
     </body>
 </html>
