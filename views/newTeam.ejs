@@ -32,10 +32,10 @@
         const teamName = form.serialize();
         $('#teamName').val('');
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
-          .done(() => window.location.replace('/teams/scores'))
+          .done(() => window.location.replace('/teams'))
           .fail(error => alert(error.responseText));
 
-        <%= user.teams.push(teamName) -%>
+        //<%= user.teams.push(teamName) -%>
         $.ajax({method: 'put', url: '/user/<%= user._id -%>', data: '_id=<%= user._id -%>&teams=<%= user.teams -%>'})
           .fail(error => alert(error.responseText));
       });
