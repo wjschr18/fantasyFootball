@@ -17,17 +17,15 @@
           const form = $('#userName');
           const userName = form.serialize();
           $('#userName').val('');
-          $.ajax({method: 'post', url: '/teams/new', data: `${userName}&score=0`})
+          $.ajax({method: 'post', url: '/signup', data: `${userName}&score=0`})
             .done(() => window.location.replace('/teams'))
             .fail(error => alert(error.responseText));
         });
 
-        $('#create').on('click', function(event){
-          event.preventDefault();
           const form = $('#teamName');
           const teamName = form.serialize();
           $('#teamName').val('');
-          $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
+          $.ajax({method: 'post', url: '/signup', data: `${teamName}&score=0`})
             .done(() => window.location.replace('/teams'))
             .fail(error => alert(error.responseText));
         });
