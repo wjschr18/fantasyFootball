@@ -24,8 +24,8 @@
       $('.active').removeClass('active');
       $('#newTeam').addClass('active');
     </script>
-    <script>
 
+    <script>
       $('#create').on('click', function(event){
         event.preventDefault();
         const form = $('#teamName');
@@ -35,11 +35,12 @@
           .done(() => window.location.replace('/teams'))
           .fail(error => alert(error.responseText));
       });
-
+    </script>
+    <script>
       $('#update').on('click', function(event){
         event.preventDefault();
         const form = $(this);
-      
+        <%= user.teams.push(teamName) -%> '_id=<%= user._id -%>&teams=<%= user.teams -%>'
         $.ajax({method: 'put', url: '/user/<%= user._id -%>', data: form.serialize()})
           .fail(error => alert(error.responseText));
       });

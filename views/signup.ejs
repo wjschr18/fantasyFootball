@@ -1,0 +1,38 @@
+<html>
+  <%- include('./header'); -%>
+  <%- include('./navs'); -%>
+  <body>
+  <form>
+  <h2>Sign Up and Make a Team</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Create an Account</h5>
+        <input type="text" class="pr-3" id="userName" name="id" value="">
+        <input type="text" class="pr-3" id="teamName" name="id" value="">
+        <button id="create" class="btn btn-primary ml-2">Create Your Account and Team</button>
+      </div>
+    <script>
+        $('#create').on('click', function(event){
+          event.preventDefault();
+          const form = $('#userName');
+          const userName = form.serialize();
+          $('#userName').val('');
+          $.ajax({method: 'post', url: '/teams/new', data: `${userName}&score=0`})
+            .done(() => window.location.replace('/teams'))
+            .fail(error => alert(error.responseText));
+        });
+
+        $('#create').on('click', function(event){
+          event.preventDefault();
+          const form = $('#teamName');
+          const teamName = form.serialize();
+          $('#teamName').val('');
+          $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
+            .done(() => window.location.replace('/teams'))
+            .fail(error => alert(error.responseText));
+        });
+
+      </script>
+    </form>
+    </body>
+</html>
