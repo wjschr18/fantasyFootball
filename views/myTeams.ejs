@@ -4,12 +4,14 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
+    <form>
     <h2>Team Management</h2>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Your Teams</h5>
       </div>
     </div>
+  </form>
     <%_ } -%> <!-- for login.ejs -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -18,9 +20,17 @@
     </script>
     <script>
       $('.active').removeClass('active');
-      $('#myTeam').addClass('active');
+      $('#myTeams').addClass('active');
 
     </script>
+    <script>
+    $('form').on('submit', function(event){
+      const form = $(this);
+
+      $.ajax({method: 'post', url: '/teams/scores', data: `score=${total}`})
+        .done(() => window.location.replace('/teams/scores'))
+        .fail(cerror => alert(error.responseText));
+    });
   </main>
   </body>
 </html>
