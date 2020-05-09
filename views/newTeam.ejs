@@ -25,6 +25,7 @@
       $('#create').on('click', function(event){
         event.preventDefault();
         teamName = $('#teamName').serialize();
+        <%= team.score = 0-%>
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=<%= team.score -%>`})
           .done(() => window.location.replace('/teams'))
           .fail(error => alert(error.responseText));
