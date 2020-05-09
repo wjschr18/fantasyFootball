@@ -14,17 +14,12 @@
         <button id="create" class="btn btn-primary ml-2">Create Your Team</button>
       </div>
     </div>
-    <%_ } -%>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous">
     </script>
-    <script>
-      $('.active').removeClass('active');
-      $('#newTeam').addClass('active');
-    </script>
-
     <script>
       const teamName = '';
         $('#create').on('click', function(event){
@@ -43,5 +38,15 @@
           $.ajax({method: 'put', url: `/user/${<%= user._id -%>}`, data: `_id=${<%= user._id -%>}&teams=${<%= user.teams -%>}`})
             .fail(error => alert(error.responseText));
         });
+    </script>
+    <%_ } -%>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      $('.active').removeClass('active');
+      $('#newTeam').addClass('active');
     </script>
 </html>
