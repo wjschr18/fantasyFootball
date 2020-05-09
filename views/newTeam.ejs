@@ -33,6 +33,7 @@
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
           .done(console.log(form.val()))
           .fail(console.log(error.responseText));
+
         $.ajax({method: 'put', url: `/user/${user._id}`, data: `_id=${user._id}&teams=${user.teams}`})
            .done(() => window.location.reload())
            .fail(console.log(error.responseText));
