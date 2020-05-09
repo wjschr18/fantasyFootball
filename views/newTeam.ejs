@@ -30,12 +30,12 @@
         event.preventDefault();
         const form = $('#teamName');
         const teamName = form.serialize();
-        //$('#teamName').val('');
+        $('#teamName').val('');
         $.ajax({method: 'post', url: '/teams/new', data: `${teamName}&score=0`})
           .done(id => window.location.replace(`/courses/${id}`));
           .fail(error => alert(error.responseText));
       });
 
-      
+
     </script>
 </html>
