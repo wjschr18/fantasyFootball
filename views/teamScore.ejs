@@ -121,8 +121,8 @@
                 }
                 event.preventDefault();
                 team.score = total;
-                $.ajax({method: 'post', url: '/teams/score', data: `score=${total}`})
-                  .done(() => window.location.replace('/teams/score'))
+                $.ajax({method: 'post', url: '/teams/scores', data: `score=${total}`})
+                  .done(() => window.location.replace('/teams/scores'))
                   .fail(cerror => alert(error.responseText));
               });
 
