@@ -2,20 +2,21 @@
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
   <%_ if (!user) { -%>
-  <form id="userName"
+
   <h2>Sign Up</h2>
+  <form id="userName">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Create an Account</h5>
-        <input type="text" class="pr-3"  name="_id">
-        <button id="create" class="btn btn-primary ml-2">Create Your Account</button>
+        <input type="text" class="pr-3" name="_id">
+        <button id="create" class="btn btn-primary ml-2">Sign in</button>
       </div>
     </form>
     <script>
         $('#userName"').on('click', function(event){
           event.preventDefault();
           const form = $(this);
-          $.ajax({method: 'post', url: '/teams', data: form.serialize()})
+          $.ajax({method: 'post', url: '/users', data: form.serialize()})
             .done(() => window.location.replace('/newTeam'))
             .fail(error => alert(error.responseText));
         });
