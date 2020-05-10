@@ -121,6 +121,7 @@
                   let num = Number(ins[i]);
                   total = total + num;
                 }
+                
                 event.preventDefault();
                 $.ajax({method: 'put', url: '/teams', data: form.serialize()})
                   .done(() => window.location.replace('/teams/scores'))
