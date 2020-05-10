@@ -111,10 +111,10 @@
                 const inputs = form.find('input'); // JQuery object represent all inputs
                 let ins = [];
                 for (let input of inputs) {
-                  input = $(input); // Turn into a JQuery object
-                  const li = input.val(); // New list item
+                  input = $(input);
+                  const li = input.val(); 
                   ins.push(li);
-                  input.val(''); // Empty out the box
+                  input.val('');
                 }
                 let total = 0;
                 for (let i = 0; i < ins.length; i++) {
@@ -122,8 +122,7 @@
                   total = total + num;
                 }
                 event.preventDefault();
-                team.score = total;
-                $.ajax({method: 'post', url: '/teams/scores', data: `score=${total}`})
+                $.ajax({method: 'put', url: '/teams/<%= team._id -%>', data: form.serialize()})
                   .done(() => window.location.replace('/teams/scores'))
                   .fail(cerror => alert(error.responseText));
               });

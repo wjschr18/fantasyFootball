@@ -27,6 +27,6 @@
     event.preventDefault();
     $.ajax({method: 'post', url: '/login', data: form.serialize()})
       .done(() => window.location.replace('/signup'))
-      .fail(error => alert('Could not log in.'));
+      .fail(error => alert('Could not sign up.'));
   });
 </script>

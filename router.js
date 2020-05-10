@@ -45,6 +45,7 @@ router.post('/teams', teams.create);
 router.delete('/user/:id', users.delete);
 router.delete('/team/:id', teams.delete)
 router.put('/user/:id', users.update);
+router.put('/team/:score', teams.update);
 
 // Export the router
 module.exports = router;
