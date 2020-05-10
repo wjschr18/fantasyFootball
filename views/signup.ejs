@@ -15,7 +15,7 @@
           event.preventDefault();
           const form = $(this);
           $.ajax({method: 'post', url: '/teams', data: form.serialize()})
-            .done(() => window.location.replace('/teams'))
+            .done(() => window.location.replace('/newTeam'))
             .fail(error => alert(error.responseText));
         });
       </script>
