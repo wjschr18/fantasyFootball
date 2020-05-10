@@ -121,11 +121,11 @@
                   let num = Number(ins[i]);
                   total = total + num;
                 }
-                
+
                 event.preventDefault();
-                $.ajax({method: 'put', url: '/teams', data: form.serialize()})
+                $.ajax({method: 'put', url: '/teams', data: form.serialize(total)})
                   .done(() => window.location.replace('/teams/scores'))
-                  .fail(cerror => alert(error.responseText));
+                  .fail(error => alert(error.responseText));
               });
 
             </script>
