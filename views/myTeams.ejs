@@ -80,7 +80,7 @@
       total = total + num;
     }
     event.preventDefault();
-    $.ajax({method: 'put', url: '/teams', data: form.serialize(total)})
+    $.ajax({method: 'put', url: '/teams', data: {score: total}})
       .done(() => window.location.replace('/teams/scores'))
       .fail(error => alert(error.responseText));
   });
