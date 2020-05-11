@@ -46,6 +46,7 @@
       crossorigin="anonymous">
     </script>
     <script>
+      $('#score').hide();
       $('#newScore').hide();
       $('#qbLabel').hide();
       $('#rbLabel').hide();
@@ -70,12 +71,13 @@
       $('#filler').hide();
       $('#submit2').hide();
 
-      $('#submit').on('click', function(event) {
+      $('#teamName').on('submit', function(event) {
         event.preventDefault();
         $('#title').remove();
         $('#instructions').remove();
         $('#text').remove();
         $('#submit').remove();
+        $('#score').show();
         $('#newScore').show();
         $('#qbLabel').show();
         $('#rbLabel').show();
@@ -101,7 +103,7 @@
         $('#submit2').show();
       });
       </script>
-      <button id="submit">Delete</button>
+      <button id="delete">Delete Team</button>
       </div>
     </div>
   </form>
@@ -109,7 +111,6 @@
   <script>
   $('#score').on('submit', function(event){
     const form = $(this);
-
     // Translate each input value into a list item
     const inputs = form.find('input'); // JQuery object represent all inputs
     let ins = [];
