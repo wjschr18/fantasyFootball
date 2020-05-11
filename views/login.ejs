@@ -36,14 +36,13 @@
         </div>
       </div>
       </form>
-      <script>
-          $('#userName').on('submit', function(event){
-            event.preventDefault();
-            const form = $(this);
-            $.ajax({method: 'post', url: '/login', data: form.serialize()})
-              .done(() => window.location.replace('/newTeam'))
-              .fail(error => alert(error.responseText));
-          });
-        </script>
     `)
+
+    $('#userName').on('submit', function(event){
+      event.preventDefault();
+      const form = $(this);
+      $.ajax({method: 'post', url: '/login', data: form.serialize()})
+        .done(() => window.location.replace('/newTeam'))
+        .fail(error => alert(error.responseText));
+    });
 </script>
