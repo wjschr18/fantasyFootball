@@ -40,16 +40,15 @@
           <button class="btn btn-primary ml-2">Sign Up</button>
         </div>
       </form>
-    </div>
-    <script>
-    $('#user').on('submit', function(event){
-        event.preventDefault();
-        const form = $(this);
-        $.ajax({method: 'post', url: '/login', data: form.serialize()})
-          .done(() => window.location.replace('/teams/new'))
-          .fail(error => alert(error.responseText));
-    });
-  </script>
-    `));
+    </div>`));
   });
+  <script>
+  $('#user').on('submit', function(event){
+      event.preventDefault();
+      const form = $(this);
+      $.ajax({method: 'post', url: '/login', data: form.serialize()})
+        .done(() => window.location.replace('/teams/new'))
+        .fail(error => alert(error.responseText));
+  });
+</script>
 </script>
