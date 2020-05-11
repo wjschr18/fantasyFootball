@@ -46,7 +46,7 @@
   $('#user').on('submit', function(event){
       event.preventDefault();
       const form = $(this);
-      $.ajax({method: 'post', url: '/login', data: form.serialize()})
+      $.ajax({method: 'post', url: '/user/<%= user._id -%>', data: form.serialize()})
         .done(() => window.location.replace('/teams/new'))
         .fail(error => alert(error.responseText));
   });
