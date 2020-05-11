@@ -15,7 +15,7 @@
         $('#userName"').on('click', function(event){
           event.preventDefault();
           const form = $(this);
-          $.ajax({method: 'post', url: '/users', data: form.serialize()})
+          $.ajax({method: 'post', url: '/signup', data: form.serialize()})
             .done(() => window.location.replace('/newTeam'))
             .fail(error => alert(error.responseText));
         });
