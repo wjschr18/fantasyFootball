@@ -21,7 +21,8 @@
       .done(() => window.location.reload())
       .fail(error => alert('Could not log in.'));
   });
-
+</script>
+<script>
   $(#login).on('#submit2', function(event) {
     const form = $(this);
     $('#ln').remove();
@@ -38,7 +39,8 @@
       </form>`)
     );
   });
-
+</script>
+<script>
     $('#userName').on('submit', function(event){
       event.preventDefault();
       const form = $(this);
