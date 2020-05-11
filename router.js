@@ -13,7 +13,6 @@ router.get('/', function(request, response){
 
 router.post('/signup',  users.create, users.login);
 
-
 router.post('/login', users.login);
 
 // Handle logout requests
