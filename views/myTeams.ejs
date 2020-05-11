@@ -5,7 +5,7 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-  <form id="manage">
+
     <h2>Team Management</h2>
     <div class="card">
       <div class="card-body">
@@ -15,7 +15,7 @@
             <input type="text" id="team">
             <button id="submit">Go</button>
         </form>
-    <form >
+    <form id="s">
       <div id="score">
         <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
         <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
@@ -105,13 +105,14 @@
         $('#submit2').show();
       });
       </script>
-      <button id="delete">Delete Team</button>
-      </div>
+      <form id="manage">
+        <button id="delete">Delete Team</button>
+      </form>
     </div>
-  </form>
+  </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-  $('#score').on('submit', function(event){
+  $('#s').on('submit', function(event){
     const form = $(this);
     // Translate each input value into a list item
     const inputs = form.find('input'); // JQuery object represent all inputs
@@ -132,17 +133,15 @@
       .done(() => window.location.replace('/teams/scores'))
       .fail(error => alert(error.responseText));
   });
-  </script>
-  <script>
-  $('#score').on('submit', function(event){
+
+  $('#s').on('submit', function(event){
     event.preventDefault();
     const form = $(this);
     $.ajax({method: 'post', url: '/teams', data: form.serialize()})
       .done(() => window.location.replace('/teams/scores'))
       .fail(error => alert(error.responseText));
   });
-  </script>
-  <script>
+
   $('#manage').on('submit', function(event){
     const form = $(this);
     $.ajax({method: 'delete', url: '/teams', data: form.serialize()})
