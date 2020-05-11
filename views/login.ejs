@@ -25,7 +25,8 @@
       .done(() => window.location.reload())
       .fail(error => alert('Could not log in.'));
   });
-
+</script>
+<script>
   $(#sign).on('submit', function(event){
     event.preventDefault();
     $('#ln').remove();
