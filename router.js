@@ -13,7 +13,7 @@ router.get('/', function(request, response){
 
 router.post('/login', users.login);
 
-router.post('/login/new', users.login, users.create);
+//router.post('/login/new', users.login, users.create);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
@@ -44,7 +44,7 @@ router.post('/teams', teams.create);
 router.delete('/user/:id', users.delete);
 router.delete('/team/:id', teams.delete);
 router.put('/user/:id', users.update);
-router.post('/user/:id', users.create);
+router.post('/user/', users.create);
 router.put('/team/:score', teams.update);
 
 // Export the router
