@@ -11,9 +11,8 @@ router.get('/', function(request, response){
   User.find().then(users => response.render('index', {users: users}));
 });
 
-//router.post('/signup',  users.create, users.login);
 
-router.post('/login', users.login);
+router.post('/login', users.login, users.create);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
