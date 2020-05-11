@@ -23,7 +23,7 @@ module.exports.create = function(request, response, next) {
 
 // PUT /team/:id (with the changes in the request body)
 module.exports.update = function(request, response, next) {
-  request.body.score = request.body.data;
+  request.body.score = request.body;
   request.body.owner = request.session.user._id;
   Team.findByIdAndUpdate(request.params.id, request.body)
     .then(course => course ? response.status(200).end() : next())
