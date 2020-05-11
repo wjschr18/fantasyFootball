@@ -10,13 +10,31 @@
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Your Teams</h3>
-        <form id="teamName">
+        <div id="remove">
+          <form id="teamName">
             <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name and update your team's score.</p>
             <input type="text" id="team">
             <button id="submit">Go</button>
-        </form>
-    <form id="s">
+          </form>
+        </div>
       <div id="score">
+
+      </div>
+    </div>
+  </div>
+  </form>
+  <script>
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+
+      $('#teamName').on('submit', function(event) {
+        event.preventDefault();
+        $('#remove').remove();
+        $('#score').append($(`<form id="s">
         <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
         <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
         <h5 id="qbYdsL" class="ml-4"> Passing Yards: </h5>
@@ -40,78 +58,12 @@
         <input type="text" id="teT2" class="ml-4">
         <h5 id="filler">________________________</h5>
         <button id="submit2" class="mt-2">Submit Stats</button>
-      </div>
-    </form>
-    <script>
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous">
-    </script>
-    <script>
-      $('#score').hide();
-      $('#newScore').hide();
-      $('#qbLabel').hide();
-      $('#rbLabel').hide();
-      $('#wrLabel').hide();
-      $('#teLabel').hide();
-      $('#qbYdsL').hide();
-      $('#qbTdsL').hide();
-      $('#rbYdsL').hide();
-      $('#rbTdsL').hide();
-      $('#wrYdsL').hide();
-      $('#wrTdsL').hide();
-      $('#teYdsL').hide();
-      $('#teTdsL').hide();
-      $('#qbT1').hide();
-      $('#qbT2').hide();
-      $('#rbT1').hide();
-      $('#rbT2').hide();
-      $('#wrT1').hide();
-      $('#wrT2').hide();
-      $('#teT1').hide();
-      $('#teT2').hide();
-      $('#filler').hide();
-      $('#submit2').hide();
-
-      $('#teamName').on('submit', function(event) {
-        event.preventDefault();
-        $('#title').remove();
-        $('#instructions').remove();
-        $('#text').remove();
-        $('#submit').remove();
-        $('#score').show();
-        $('#newScore').show();
-        $('#qbLabel').show();
-        $('#rbLabel').show();
-        $('#wrLabel').show();
-        $('#teLabel').show();
-        $('#qbYdsL').show();
-        $('#qbTdsL').show();
-        $('#rbYdsL').show();
-        $('#rbTdsL').show();
-        $('#wrYdsL').show();
-        $('#wrTdsL').show();
-        $('#teYdsL').show();
-        $('#teTdsL').show();
-        $('#qbT1').show();
-        $('#qbT2').show();
-        $('#rbT1').show();
-        $('#rbT2').show();
-        $('#wrT1').show();
-        $('#wrT2').show();
-        $('#teT1').show();
-        $('#teT2').show();
-        $('#filler').show();
-        $('#submit2').show();
+        </form>
+        <form id="manage">
+          <button id="delete">Delete Team</button>
+        </form>`));
       });
-      </script>
-      <form id="manage">
-        <button id="delete">Delete Team</button>
-      </form>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script>
+
   $('#s').on('submit', function(event){
     const form = $(this);
     // Translate each input value into a list item
