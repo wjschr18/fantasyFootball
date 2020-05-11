@@ -47,7 +47,7 @@
       event.preventDefault();
       const form = $(this);
       $.ajax({method: 'post', url: '/login', data: form.serialize()})
-        .done(id => window.location.replace('/teams/new'))
+        .done(() => window.location.replace('/teams/new'))
         .fail(error => alert(error.responseText));
   });
 </script>
