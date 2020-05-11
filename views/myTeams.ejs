@@ -66,8 +66,7 @@
 
   $('#s').on('submit', function(event){
     const form = $(this);
-    // Translate each input value into a list item
-    const inputs = form.find('input'); // JQuery object represent all inputs
+    const inputs = form.find('input');
     let ins = [];
     for (let input of inputs) {
       input = $(input);
