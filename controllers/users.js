@@ -13,6 +13,7 @@ module.exports.login = function(request, response, next) {
 };
 
 module.exports.create = function(request, response, next) {
+  request.body.user._id = request.session.user._id;
   User.create(request.body)
     .then(user => response.status(201).send(user._id))
     .catch(error => next(error));
