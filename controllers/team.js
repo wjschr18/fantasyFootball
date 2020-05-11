@@ -13,7 +13,7 @@ module.exports.login = function(request, response, next) {
 };
 
 module.exports.create = function(request, response, next) {
-  request.body._id = request.data;
+  
   request.body.score = 0;
   request.body.owner = request.session.user._id;
     Team.create(request.body)
