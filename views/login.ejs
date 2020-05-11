@@ -42,7 +42,7 @@
       </form>
     </div>`));
   });
-  <script>
+
   $('#user').on('submit', function(event){
       event.preventDefault();
       const form = $(this);
@@ -50,5 +50,4 @@
         .done(() => window.location.replace('/teams/new'))
         .fail(error => alert(error.responseText));
   });
-</script>
 </script>
