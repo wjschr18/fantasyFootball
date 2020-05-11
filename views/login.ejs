@@ -6,8 +6,8 @@
     <input type="text" name="_id" class="ml-4">
     <button type="submit" class="btn btn-info p-2">Sign In</button>
   </form>
-  <form id="sign">
-    <button type="submit" class="btn btn-info mt-2 btn-block">Create An Account</button>
+  <form>
+    <button type="submit" id="sign" class="btn btn-info mt-2 btn-block">Create An Account</button>
   </form>
   </div>
 </div>
@@ -25,8 +25,7 @@
   });
 </script>
 <script>
-  $(#sign).on('submit', function(event) {
-    const form = $(this);
+  $(#sign).click(function(event) {
     event.preventDefault();
     $('#ln').remove();
     $('#new').append($(`
@@ -41,7 +40,7 @@
       </div>
       </form>
       `)
-    );
+    });
     <script>
       $('#userName').on('submit', function(event){
           event.preventDefault();
