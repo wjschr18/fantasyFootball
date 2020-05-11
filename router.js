@@ -11,8 +11,11 @@ router.get('/', function(request, response){
   User.find().then(users => response.render('index', {users: users}));
 });
 
-
 router.post('/login', users.login);
+
+router.post('/login/new', function(request, response) {
+  request.session.user._id = user.create;
+});
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
@@ -43,7 +46,7 @@ router.post('/teams', teams.create);
 router.delete('/user/:id', users.delete);
 router.delete('/team/:id', teams.delete);
 router.put('/user/:id', users.update);
-router.post('/login', users.create);
+router.post('/user/:id', users.create);
 router.put('/team/:score', teams.update);
 
 // Export the router
