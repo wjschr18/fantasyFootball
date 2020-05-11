@@ -5,7 +5,9 @@
     <h6 class="pl-2 pt-1">Username</h6>
     <input type="text" name="_id" class="ml-4">
     <button type="submit" class="btn btn-info p-2">Sign In</button>
-    <button type="submit" id="sign" class="btn btn-info mt-2 btn-block">Create An Account</button>
+    <form id="sign">
+      <button type="submit" class="btn btn-info mt-2 btn-block">Create An Account</button>
+    </form>
   </form>
   </div>
 </div>
@@ -20,9 +22,9 @@
     $.ajax({method: 'post', url: '/login', data: form.serialize()})
       .done(() => window.location.reload())
       .fail(error => alert('Could not log in.'));
-  });
+  })
 
-  $(#sign).on('click', function(event) {
+  $(#sign).on('submit', function(event) {
     event.preventDefault();
     $('#ln').remove();
     $('#new').append($(`
