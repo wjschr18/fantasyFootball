@@ -1,15 +1,16 @@
-<html>
+
   <%- include('./header'); -%>
   <%- include('./navs'); -%>
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    <form>
+    <form id="manage">
     <h2>Team Management</h2>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Your Teams</h5>
       </div>
+      <button id="submit">Delete</button>
     </div>
   </form>
     <%_ } -%> <!-- for login.ejs -->
@@ -24,13 +25,19 @@
 
     </script>
     <script>
-    $('form').on('submit', function(event){
+    $('#manage').on('submit', function(event){
       const form = $(this);
-
       $.ajax({method: 'post', url: '/teams/scores', data: `score=${total}`})
         .done(() => window.location.replace('/teams/scores'))
         .fail(cerror => alert(error.responseText));
     });
-  </main>
+
+    $('#manage').on('submit', function(event){
+      const form = $(this);
+      $.ajax({method: 'delete', url: '/teams', data: form.serialize()})
+        .done(() => window.location.reload())
+        .fail(cerror => alert(error.responseText));
+    });
+    </main>
   </body>
 </html>

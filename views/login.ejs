@@ -20,7 +20,7 @@
       .done(() => window.location.reload())
       .fail(error => alert('Could not log in.'));
   });
-  
+
   $(#signup).on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
