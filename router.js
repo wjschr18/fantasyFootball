@@ -11,7 +11,7 @@ router.get('/', function(request, response){
   User.find().then(users => response.render('index', {users: users}));
 });
 
-router.post('/signup',  users.create, users.login);
+//router.post('/signup',  users.create, users.login);
 
 router.post('/login', users.login);
 

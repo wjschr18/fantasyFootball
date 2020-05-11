@@ -5,16 +5,18 @@
     <h6 class="pl-2 pt-1">Username</h6>
     <input type="text" name="_id" class="ml-4">
     <button type="submit1" class="btn btn-info p-2">Sign In</button>
+  </form>
+  <form id="sign">
     <button type="submit2" class="btn btn-info mt-2 btn-block">Create An Account</button>
   </form>
+  </div>
+</div>
   <div id="new">
 
   </div>
-  </div>
-</div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script> // Log in
-  $('#login').on('#submit1', function(event) {
+  $('#login').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
     $.ajax({method: 'post', url: '/login', data: form.serialize()})
@@ -23,7 +25,7 @@
   });
 </script>
 <script>
-  $(#login).on('#submit2', function(event) {
+  $(#sign).on('submit', function(event) {
     const form = $(this);
     $('#ln').remove();
     $('#new').append($(`
