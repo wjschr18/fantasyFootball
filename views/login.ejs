@@ -40,7 +40,7 @@
           <button class="btn btn-primary ml-2">Sign Up</button>
         </div>
       </form>
-    </div>
+    </div>`
     <script>
     $('#user').on('submit', function(event){
         event.preventDefault();
@@ -49,7 +49,7 @@
           .done(() => window.location.replace('/teams/new'))
           .fail(error => alert(error.responseText));
     });
-  </script>`));
+  </script>));
   });
 
 
