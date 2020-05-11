@@ -12,7 +12,7 @@
       </div>
     </form>
     <script>
-        $('#userName"').on('click', function(event){
+        $('#userName').on('submit', function(event){
           event.preventDefault();
           const form = $(this);
           $.ajax({method: 'post', url: '/signup', data: form.serialize()})
