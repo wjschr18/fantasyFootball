@@ -13,9 +13,7 @@ router.get('/', function(request, response){
 
 router.post('/login', users.login);
 
-router.post('/login/new', function(request, response) {
-  request.session.user._id = user.create;
-});
+router.post('/login/new', users.create);
 
 // Handle logout requests
 router.get('/logout', function(request, response) {
