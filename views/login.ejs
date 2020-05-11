@@ -31,6 +31,7 @@
     event.preventDefault();
     $('#ln').remove();
     $('#new').append($(`<div class="card">
+      <div class="card m-3">
         <form id="user">
         <h2>Create an Account</h2>
         <div class="card-body">
@@ -42,11 +43,11 @@
     </div>`));
   });
 
-  $('document').on('submit', '#user', function(event){
+  $('#user').on('submit', function(event){
       event.preventDefault();
       const form = $(this);
-      $.ajax({method: 'post', url: '/users', data: form.serialize()})
-        .done(_id => window.location.replace('/newTeam'))
+      $.ajax({method: 'post', url: '/user', data: form.serialize()})
+        .done(id => window.location.replace('/newTeam'))
         .fail(error => alert(error.responseText));
   });
 </script>
