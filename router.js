@@ -25,9 +25,9 @@ router.get('/teams/new', function(request, response){
   Team.find().then(teams => response.render('newTeam', {teams: teams}));
 });
 
-router.get('/teams', function(request, response){
-  User.find().then(users => response.render('teamScore', {users: users}));
-});
+//router.get('/teams', function(request, response){
+  //User.find().then(users => response.render('teamScore', {users: users}));
+//});
 
 router.get('/teams/scores', function(request, response){
   Team.find().then(teams => response.render('leagueScores', {teams: teams}));
