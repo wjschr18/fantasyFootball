@@ -109,7 +109,7 @@
 
   $('#manage').on('submit', function(event){
     const form = $(this);
-    $.ajax({method: 'delete', url: '/teams/id', data: {<%= team._id-%>}})
+    $.ajax({method: 'delete', url: '/teams/id', data: form.serialize()})
       .done(() => window.location.reload())
       .fail(cerror => alert(error.responseText));
   });
