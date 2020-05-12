@@ -6,7 +6,7 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    <form id="stats">
+  <form id="stats">
     <h3 id="newScore" class="mt-4">Enter Your Players' Stats From This Week to Get Updated Team Score: </h3>
     <h4 id="qbLabel" class="mt-4">QB Stats:</h4>
     <h5 id="qbYdsL" class="ml-4"> Passing Yards: </h5>
@@ -30,7 +30,7 @@
     <input type="number" id="teT2" class="ml-4">
     <h5 id="filler">________________________</h5>
     <button id="submit2" class="mt-2">Submit Stats</button>
-    </form>
+  </form>
 <script
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -64,7 +64,7 @@ $('#stats').on('submit', function(event){
 <%_ } -%> <!-- for login.ejs -->
 <script>
   $('.active').removeClass('active');
-  $('#teamScores').addClass('active');
+  $('#myTeams').addClass('active');
 </script>
 </body>
 </html>
