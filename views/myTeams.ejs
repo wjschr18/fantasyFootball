@@ -14,27 +14,27 @@
           <table class="table table-striped">
           <tbody>
             <%_ let counter = 1;-%>
-            <%_ if (team.owner == user._id) { -%>
             <%_ for (const team of teams) { -%>
-            <tr>
-              <th scope="row"><%=counter++-%></th>
-              <td><%= team._id-%></td>
-              <td><%= team.score-%></td>
-              <form id="teamName">
-                <button id="submit">Enter Stats</button>
-              </form>
-              <form id="manage">
-                <button id="delete">Delete Team</button>
-              </form>
+              <%_ if (team.owner == user._id) { -%>
+                <tr>
+                  <th scope="row"><%=counter++-%></th>
+                  <td><%= team._id-%></td>
+                  <td><%= team.score-%></td>
+                  <form id="teamName">
+                    <button id="submit">Enter Stats</button>
+                  </form>
+                  <form id="manage">
+                    <button id="delete">Delete Team</button>
+                  </form>
+                </tr>
               <%_ } -%>
             <%_ } -%>
-            </tr>
           </tbody>
         </table>
-        </div>
-      <div id="score">
-
       </div>
+    <div id="score">
+
+    </div>
     </div>
   </div>
 </form>
