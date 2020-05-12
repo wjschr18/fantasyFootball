@@ -18,11 +18,11 @@
               <%_ if (team.owner == user._id) { -%>
                 <tr>
                 <th scope="row"><%=counter++-%></th>
-                  <form id="manage">
                   <td><%= team._id-%>
-                    <button id="delete">Delete Team</button>
+                    <form id="manage">
+                      <button id="delete">Delete Team</button>
+                    </form>
                   </td>
-                  </form>
                   <td><%= team.score-%>
                     <form id="stats">
                       <button id="submit">Enter Stats</button>
@@ -37,8 +37,8 @@
     <div id="score">
 
     </div>
-    </div>
   </div>
+</div>
 </form>
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

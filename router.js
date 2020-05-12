@@ -43,7 +43,7 @@ router.delete('/user/:id', users.delete);
 router.delete('/teams/:id', teams.delete);
 router.put('/user/:id', users.update);
 router.post('/users', users.create);
-router.put('/teams/:score', teams.update);
+router.put('/teams/:id', teams.update);
 
 // Export the router
 module.exports = router;

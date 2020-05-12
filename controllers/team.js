@@ -40,5 +40,5 @@ module.exports.delete = function(request, response, next) {
 // };
 
 module.exports.retrieve = function(request, response) {
-  response.send(`GET /teams/${request.params.id}`);
+  response.send(`GET /teams/${request.params._id}`);
 };
