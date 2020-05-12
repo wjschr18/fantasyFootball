@@ -30,8 +30,8 @@ module.exports.update = function(request, response, next) {
 
 // DELETE /team/:id
 module.exports.delete = function(request, response, next) {
-  //request.body._id = request.body;
-  Team.findByIdAndDelete(request.params.id)
+  request.body._id = request.body;
+  Team.findByIdAndDelete(request.params._id)
     .then(team => team ? response.status(200).end() : next())
     .catch(error => next(error));
 };
