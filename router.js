@@ -37,7 +37,7 @@ router.get('/teams/manage', function(request, response){
 
 //Handle course requests
 // router.get('/teams', teams.index);
-// router.get('/teams/:id', teams.retrieve);
+router.get('/teams/scores/:id', teams.retrieve);
 router.post('/teams', teams.create);
 router.delete('/user/:id', users.delete);
 router.delete('/teams/:id', teams.delete);
