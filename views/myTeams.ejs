@@ -15,18 +15,15 @@
           <tbody>
             <%_ let counter = 1;-%>
             <%_ for (const team of teams) { -%>
-              <%_ if (team.owner == user._id) { -%>
+              <%_ if (team.owner === user._id) { -%>
                 <tr>
                 <th scope="row"><%=counter++-%></th>
-                  <form id="manage">
-                    <td id="name"><%= team._id-%>
-                      <button id="delete">Delete Team</button>
+                    <td>
+                      <span><%= team._id-%></span>
+                      <button class="delete">Delete Team</button>
                     </td>
-                  </form>
                   <td><%= team.score-%>
-                    <form id="stats">
-                      <button id="submit">Enter Stats</button>
-                    </form>
+                      <button class="stats">Enter Stats</button>
                   </td>
                 </tr>
               <%_ } -%>
@@ -46,7 +43,7 @@
 </script>
   <script>
 
-      $('#stats').on('submit', function(event) {
+      $('.stats').on('click', function(event) {
         event.preventDefault();
         $('#remove').remove();
         $('#score').append($(`<form id="s">
@@ -105,9 +102,10 @@
       //.fail(error => alert(error.responseText));
   });
 
-  $('#manage').on('submit', function(event){
-    //const id = $('#name');
-    $.ajax({method: 'delete', url: '/teams/:id'})
+  $('.delete').on('click', function(event){
+    const button = $(this);
+    const id = button.prev().text();
+    $.ajax({method: 'delete', url: `/teams/${id}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
   });
