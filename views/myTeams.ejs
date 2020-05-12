@@ -5,24 +5,37 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-
     <h2>Team Management</h2>
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Your Teams</h3>
+        <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name and update your team's score.</p>
         <div id="remove">
-          <form id="teamName">
-            <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name and update your team's score.</p>
-            <input type="text" id="team">
-            <button id="submit">Go</button>
-          </form>
+          <table class="table table-striped">
+          <tbody>
+            <%_ let counter = 1;-%>
+            <%_ for (const team of teams) { -%>
+            <tr>
+              <th scope="row"><%=counter++-%></th>
+              <td><%= team._id-%></td>
+              <td><%= team.score-%></td>
+              <form id="teamName">
+                <button id="submit">Enter Stats</button>
+              </form>
+              <form id="manage">
+                <button id="delete">Delete Team</button>
+              </form>
+            </tr>
+          </tbody>
+        </table>
         </div>
       <div id="score">
 
       </div>
     </div>
   </div>
-  </form>
+</form>
+<%_ } -%>
   <script>
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -58,9 +71,6 @@
         <input type="text" id="teT2" class="ml-4">
         <h5 id="filler">________________________</h5>
         <button id="submit2" class="mt-2">Submit Stats</button>
-        </form>
-        <form id="manage">
-          <button id="delete">Delete Team</button>
         </form>`));
       });
 
