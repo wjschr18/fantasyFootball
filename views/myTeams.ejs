@@ -18,11 +18,11 @@
               <%_ if (team.owner == user._id) { -%>
                 <tr>
                 <th scope="row"><%=counter++-%></th>
+                  <form id="manage">
                   <td><%= team._id-%>
-                    <form id="manage">
-                      <button id="delete">Delete Team</button>
-                    </form>
+                    <button id="delete">Delete Team</button>
                   </td>
+                  </form>
                   <td><%= team.score-%>
                     <form id="stats">
                       <button id="submit">Enter Stats</button>
