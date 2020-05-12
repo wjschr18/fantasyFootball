@@ -99,6 +99,11 @@
     $.ajax({method: 'put', url: '/teams', data: {score: total}})
       .done(() => window.location.replace('/teams/scores'))
       .fail(error => alert(error.responseText));
+    });
+
+    $('#s').on('submit', function(event){
+      event.preventDefault();
+      const form = $(this);
 
     $.ajax({method: 'post', url: '/teams/_id', data: form.serialize()})
       .done(() => window.location.replace('/teams/scores'))
