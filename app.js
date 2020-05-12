@@ -43,16 +43,6 @@ app.use(function(request, response, next) {
   next();
 });
 
-// // Redirect from the home page
-// app.get('/', function(request, response) {
-//   response.redirect('/courses');
-// });
-// // Make the mode available in all views
-// app.use(function(request, response, next) {
-//   response.locals.admin = request.session.admin;
-//   next();
-// });
-
 // Route content requests
 app.use('/', router);
 
