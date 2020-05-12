@@ -18,11 +18,11 @@
               <%_ if (team.owner == user._id) { -%>
                 <tr>
                 <th scope="row"><%=counter++-%></th>
-                  <td><%= team._id-%>
-                    <form id="manage">
+                  <form id="manage">
+                    <td id="name"><%= team._id-%>
                       <button id="delete">Delete Team</button>
-                    </form>
-                  </td>
+                    </td>
+                  </form>
                   <td><%= team.score-%>
                     <form id="stats">
                       <button id="submit">Enter Stats</button>
@@ -107,8 +107,8 @@
   });
 
   $('#manage').on('submit', function(event){
-    const form = $(this);
-    $.ajax({method: 'delete', url: '/teams/:id', data: form.serialize()})
+    const id = $('#name');
+    $.ajax({method: 'delete', url: '/teams/:id', data: {_id: id}})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
   });
