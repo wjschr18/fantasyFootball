@@ -114,7 +114,7 @@
     const form = $(this);
     $.ajax({method: 'delete', url: '/teams/:id', data: form.serialize()})
       .done(() => window.location.reload())
-      .fail(cerror => alert(error.responseText));
+      .fail(error => alert(error.responseText));
   });
   </script>
   <%_ } -%> <!-- for login.ejs -->
