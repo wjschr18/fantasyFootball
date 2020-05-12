@@ -107,7 +107,7 @@
 
   $('#manage').on('submit', function(event){
     const id = $('#name');
-    $.ajax({method: 'delete', url: '/teams/:id'})
+    $.ajax({method: 'delete', url: '/teams/:id'}, data: {_id: id})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
   });
