@@ -95,7 +95,7 @@
 
     //to update team score and reload teams/manage page with updated score
     event.preventDefault();
-    $.ajax({method: 'put', url: '/teams/<%= team._id -%>', data: {score: total}})
+    $.ajax({method: 'put', url: '/teams/:id', data: {score: total}})
       .done(() => window.location.replace('/teams/manage'))
       .fail(error => alert(error.responseText));
 
@@ -107,7 +107,7 @@
 
   $('#manage').on('submit', function(event){
     const id = $('#name');
-    $.ajax({method: 'delete', url: '/teams/<%= team._id -%>'})
+    $.ajax({method: 'delete', url: '/teams/:id'})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
   });
