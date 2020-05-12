@@ -16,7 +16,7 @@ app.set('views', './views');
 // Parse request bodies like query strings
 app.use(express.urlencoded({extended: false}));
 
-// // Generate a session for each client
+//Generate a session for each client
 app.use(session({
   name: 'fantasyFootball', // Name of client cookies
   secret: 'temporary', // Password for client cookies
@@ -39,7 +39,6 @@ app.use(function(request, response, next) {
 
 app.use(function(request, response, next) {
   response.locals.user = request.session.user;
-  response.locals.team = request.session.team;
   next();
 });
 

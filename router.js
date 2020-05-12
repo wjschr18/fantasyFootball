@@ -34,9 +34,7 @@ router.get('/teams/manage', function(request, response){
 //Handle requests
 router.get('/teams/scores/:id', teams.retrieve);
 router.post('/teams', teams.create);
-router.delete('/user/:id', users.delete);
 router.delete('/teams/:id', teams.delete);
-router.put('/user/:id', users.update);
 router.post('/users', users.create);
 router.put('/teams/:id', teams.update);
 

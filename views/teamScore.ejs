@@ -31,7 +31,6 @@
     <h5 id="filler">________________________</h5>
     <button id="submit2" class="mt-2">Submit Stats</button>
     </form>
-<%_ } -%> <!-- for login.ejs -->
 <script
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -61,6 +60,11 @@ $('#stats').on('submit', function(event){
     .done(() => window.location.replace('/teams/manage'))
     .fail(error => alert(error.responseText));
 });
+</script>
+<%_ } -%> <!-- for login.ejs -->
+<script>
+  $('.active').removeClass('active');
+  $('#teamScores').addClass('active');
 </script>
 </body>
 </html>
