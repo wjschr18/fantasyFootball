@@ -40,10 +40,10 @@ router.get('/teams/manage', function(request, response){
 // router.get('/teams/:id', teams.retrieve);
 router.post('/teams', teams.create);
 router.delete('/user/:id', users.delete);
-router.delete('/team/:id', teams.delete);
+router.delete('/teams/:id', teams.delete);
 router.put('/user/:id', users.update);
 router.post('/users', users.create);
-router.put('/team/:score', teams.update);
+router.put('/teams/:score', teams.update);
 
 // Export the router
 module.exports = router;
