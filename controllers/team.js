@@ -24,13 +24,13 @@ module.exports.create = function(request, response, next) {
 // PUT /team/:id (with the changes in the request body)
 module.exports.update = function(request, response, next) {
   Team.findByIdAndUpdate(request.params._id, request.body)
-    .then(course => course ? response.status(200).end() : next())
+    .then(team => team ? response.status(200).end() : next())
     .catch(error => next(error));
 };
 
 // DELETE /team/:id
 module.exports.delete = function(request, response, next) {
-  request.body._id = request.body; 
+  //request.body._id = request.body;
   Team.findByIdAndDelete(request.params._id)
     .then(team => team ? response.status(200).end() : next())
     .catch(error => next(error));

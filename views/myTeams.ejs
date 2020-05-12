@@ -100,9 +100,9 @@
       .fail(error => alert(error.responseText));
 
     //to update team score on teams/scores page
-    $.ajax({method: 'put', url: '/teams/:id', data: {score: total}})
-      .done(() => window.location.reload('/teams/scores'))
-      .fail(error => alert(error.responseText));
+    //$.ajax({method: 'put', url: '/teams/:id', data: {score: total}})
+      //.done(() => window.location.reload('/teams/scores'))
+      //.fail(error => alert(error.responseText));
   });
 
   $('#manage').on('submit', function(event){
