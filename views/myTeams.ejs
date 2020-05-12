@@ -24,7 +24,7 @@
                     </form>
                   </td>
                   <td><%= team.score-%>
-                    <form id="teamName">
+                    <form id="stats">
                       <button id="submit">Enter Stats</button>
                     </form>
                  </td>
@@ -48,7 +48,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
 
-      $('#teamName').on('submit', function(event) {
+      $('#stats').on('submit', function(event) {
         event.preventDefault();
         $('#remove').remove();
         $('#score').append($(`<form id="s">
@@ -88,28 +88,26 @@
       ins.push(li);
       input.val('');
     }
+
     let total = 0;
     for (let i = 0; i < ins.length; i++) {
       let num = Number(ins[i]);
       total = total + num;
     }
+
     event.preventDefault();
     $.ajax({method: 'put', url: '/teams', data: {score: total}})
       .done(() => window.location.replace('/teams/scores'))
       .fail(error => alert(error.responseText));
-  });
 
-  $('#s').on('submit', function(event){
-    event.preventDefault();
-    const form = $(this);
-    $.ajax({method: 'post', url: '/teams/id', data: form.serialize()})
+    $.ajax({method: 'post', url: '/teams/_id', data: form.serialize()})
       .done(() => window.location.replace('/teams/scores'))
       .fail(error => alert(error.responseText));
   });
 
   $('#manage').on('submit', function(event){
     const form = $(this);
-    $.ajax({method: 'delete', url: '/teams/id', data: form.serialize()})
+    $.ajax({method: 'delete', url: '/teams/_id', data: form.serialize()})
       .done(() => window.location.reload())
       .fail(cerror => alert(error.responseText));
   });
