@@ -14,6 +14,7 @@
           <table class="table table-striped">
           <tbody>
             <%_ let counter = 1;-%>
+            <%_ if (team.owner == user._id) { -%>
             <%_ for (const team of teams) { -%>
             <tr>
               <th scope="row"><%=counter++-%></th>
@@ -25,6 +26,8 @@
               <form id="manage">
                 <button id="delete">Delete Team</button>
               </form>
+              <%_ } -%>
+            <%_ } -%>
             </tr>
           </tbody>
         </table>
@@ -35,7 +38,6 @@
     </div>
   </div>
 </form>
-<%_ } -%>
   <script>
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
