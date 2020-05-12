@@ -1,7 +1,7 @@
 const Team = require('../models/team');
 
 module.exports.login = function(request, response, next) {
-  Team.findById(request.body.id)
+  Team.findById(request.body._id)
     .then(function(team) {
       if (team) {
         request.session.team = team;
@@ -16,21 +16,21 @@ module.exports.create = function(request, response, next) {
   request.body.score = 0;
   request.body.owner = request.session.user._id;
     Team.create(request.body)
-      .then(team => response.status(201).send(team.id))
+      .then(team => response.status(201).send(team._id))
       .catch(error => next(error));
   // }
 };
 
 // PUT /team/:id (with the changes in the request body)
 module.exports.update = function(request, response, next) {
-  Team.findByIdAndUpdate(request.params.id, request.body)
+  Team.findByIdAndUpdate(request.params._id, request.body)
     .then(course => course ? response.status(200).end() : next())
     .catch(error => next(error));
 };
 
 // DELETE /team/:id
 module.exports.delete = function(request, response, next) {
-  Team.findByIdAndDelete(request.params.id)
+  Team.findByIdAndDelete(request.params._id)
     .then(team => team ? response.status(200).end() : next())
     .catch(error => next(error));
 };
