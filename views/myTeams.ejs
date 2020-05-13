@@ -24,16 +24,16 @@
                 <tr>
                 <th scope="row"><%=counter++-%></th>
                   <td>
+                    <div class="col m-6 p-6">
                       <span><%= team._id-%></span>
-                    <div class="col border m-6 p-6">
-                      <button class="delete btn btn-primary">Delete Team</button>
+                      <button class="delete btn btn-primary mt-6">Delete Team</button>
                     </div>
                   </td>
                   <td>
-                    <div class="col border m-6 p-6">
+                    <div class="col m-6 p-6">
                       <span><%= team.score-%></span>
+                      <button class="btn btn-primary mt-6"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
                     </div>
-                  <button class="btn btn-primary"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
                   </td>
                 </tr>
               <%_ } -%>
