@@ -6,7 +6,8 @@ unnecessarily long.
 2) When we hit the Create An Account button, it seems unnecessary
 to generate a whole new form. Why not have this button send the
 post request itself, using the name in the login box?
---> maybe
+
+--> Done?
 
 3) The Start New Team page doesn't have any large headings,
 and the My Teams page has two. It would be more consistent for
@@ -24,12 +25,12 @@ these buttons would be in a column of their own.
 (Note this would mean changing your delete event handler slightly,
 since the ID would be in a different relative location to the delete
 button.)
---> Get ride of cards
+--> Done
 
 5) On the League Scores page, the teams should be sorted by score,
 with the highest-scoring team at the top. (Your controller can ask
 the database to sort the teams as it finds them.)
--->close?
+--> Done
 
 6) On the page for updating a team score:
 This form takes lots of vertical space and very little horizontal.
@@ -51,19 +52,20 @@ router.delete('/user/:id',
 users.delete);
 router.put('/user/:id',
 users.update);
--->Done
+--> Done
 
 2) Currently router.js is handling all but one of your GET requests.
 For consistency, you might as well handle the last GET request there
 too, and get rid of the teams.retrieve controller function.
--->?
+--> Done
 
 3) It would be more in keeping with the rest of your naming scheme if
 you used teams.js as the name of the controller for teams. Also,
 the login function in this controller can be deleted (it's not being
 called), and there's some commented-out stuff that you
 can clean up.
--->need to change team everywhere
+
+--> NEED TO CHANGE
 
 4) Along with a few commented-out things that you can clean up in app.js,
 this line doesn't make sense:
@@ -80,7 +82,8 @@ html/body/div/main structure entirely within the rendered views,
 including the <head> and <nav> parts where appropriate. It'd be
 easier to see that you've opened and closed everything correctly
 this way.
--->maybe?
+
+--> ??????????????????????
 
 
 Suggestions for phase three
