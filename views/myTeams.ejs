@@ -24,20 +24,15 @@
                 <tr>
                 <th scope="row"><%=counter++-%></th>
                   <td>
-                  <div class="card">
-                    <div class="col border m-6 p-6">
                       <span><%= team._id-%></span>
+                    <div class="col border m-6 p-6">
                       <button class="delete btn btn-primary">Delete Team</button>
-                      <!-- can't get it too work without being right under span -->
                     </div>
-                  </div>
                   </td>
                   <td>
-                  <div class="card">
                     <div class="col border m-6 p-6">
                       <span><%= team.score-%></span>
                     </div>
-                  </div>
                   <button class="btn btn-primary"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
                   </td>
                 </tr>
