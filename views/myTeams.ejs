@@ -9,7 +9,7 @@
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Your Teams</h3>
-        <h5 id="instructions" class= "mt-4">Welcome to the your team page! Enter your team name and update your team's score.</p>
+        <h5 id="instructions" class= "mt-4">Welcome to your team page!</p>
         <div id="remove">
           <table class="table table-striped">
           <tbody>
@@ -20,10 +20,10 @@
                 <th scope="row"><%=counter++-%></th>
                     <td>
                       <span><%= team._id-%></span>
-                      <button class="delete">Delete Team</button>
+                      <button class="delete btn btn-primary">Delete Team</button>
                     </td>
                   <td><%= team.score-%>
-                      <button><a href="/teams/scores/<%= team._id-%>">Enter Stats</a></button>
+                      <button class="btn btn-primary"><a href="/teams/scores/<%= team._id-%>">Enter Stats</a></button>
                   </td>
                 </tr>
               <%_ } -%>
