@@ -5,9 +5,7 @@
     <h6 class="pl-2 pt-1">Username</h6>
     <input type="text" name="_id" class="ml-4">
     <button type="submit" class="btn btn-primary">Sign In</button>
-    <form id="sign">
-      <button type="submit" id="s" class="btn btn-primary">Create An Account</button>
-    </form>
+    <button type="submit" id="sign" class="btn btn-primary">Create An Account</button>
   </form>
   </div>
 </div>
@@ -26,7 +24,7 @@
   });
 </script>
 <script>
-  $('#sign').on('submit', function(event){
+  $('#sign').on('click', function(event){
     event.preventDefault();
     $('#ln').remove();
     $('#new').append($(`<div class="card">
@@ -40,6 +38,7 @@
         </div>
       </form>
     </div>`));
+
     $('#user').on('submit', function(event){
         event.preventDefault();
         const form = $(this);
