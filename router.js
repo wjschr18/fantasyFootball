@@ -34,7 +34,7 @@ router.get('/teams/manage', function(request, response){
 //add team update get
 router.get('/teams/scores/:id', function(request, response){
   Team.find().then(team => response.render('teamScore', {id: request.params.id}));
-)};
+});
 
 //router.get('/teams/scores/:id', teams.retrieve);
 
