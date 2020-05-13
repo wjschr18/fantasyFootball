@@ -10,7 +10,6 @@ module.exports.create = function(request, response, next) {
 
 // PUT /team/:id (with the changes in the request body)
 module.exports.update = function(request, response, next) {
-
   Team.findOneAndUpdate({_id: request.params.id, owner: request.session.user._id}, request.body)
     .then(team => team ? response.status(200).end() : next())
     .catch(error => next(error));
@@ -23,6 +22,6 @@ module.exports.delete = function(request, response, next) {
     .catch(error => next(error));
 };
 
-module.exports.retrieve = function(request, response) {
-  response.render('teamScore', {id: request.params.id})
-};
+//module.exports.retrieve = function(request, response) {
+  //response.render('teamScore', {id: request.params.id})
+//};
