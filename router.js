@@ -24,15 +24,17 @@ router.get('/teams/new', function(request, response){
 });
 
 router.get('/teams/scores', function(request, response){
-  Team.find().then(teams => response.render('leagueScores', {teams: teams}));
+  Team.find().sort('-score').then(teams => response.render('leagueScores', {teams: teams}));
 });
 
 router.get('/teams/manage', function(request, response){
   Team.find().then(teams => response.render('myTeams', {teams: teams}));
 });
 
-//Handle requests
+//add team update get
 router.get('/teams/scores/:id', teams.retrieve);
+
+//Handle requests
 router.post('/teams', teams.create);
 router.delete('/teams/:id', teams.delete);
 router.post('/users', users.create);
