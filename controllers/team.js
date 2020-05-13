@@ -10,6 +10,7 @@ module.exports.create = function(request, response, next) {
 
 // PUT /team/:id (with the changes in the request body)
 module.exports.update = function(request, response, next) {
+  
   Team.findByIdAndUpdate(request.params.id, request.body)
     .then(team => team ? response.status(200).end() : next())
     .catch(error => next(error));
