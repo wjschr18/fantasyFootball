@@ -33,14 +33,16 @@
                 </tr>
             <%_ } -%>
           <%_ } -%>
-          <%_ } -%>
-        <%_ } else { -%>
+        <%_ } -%>
+      <%_ } if (team.score === 0) { -%>
+        <%_ for (const team of teams) { -%>
           <tr>
             <th scope="row"><%=counter++-%></th>
             <td><%= team._id-%></td>
             <td><%= team.score-%></td>
           </tr>
         <%_ } -%>
+      <%_ } -%>
     </tbody>
   </table>
 <%_ } -%>
