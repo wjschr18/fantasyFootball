@@ -22,6 +22,16 @@
         <%_ if (team.score != 0) { -%>
             <%_ hold = team.score;-%>
             <%_ scores.push(hold);-%>
+            <%_ for (const s of scores) { -%>
+              <%_ if (team.score === hold) { -%>
+                <tr>
+                  <th scope="row"><%=counter++-%></th>
+                  <%_ hold = team.score;-%>
+                  <td><%= team._id-%></td>
+                  <td><%= team.score-%></td>
+                </tr>
+              <%_ } -%>
+            <%_ } -%>
         <%_ } else { -%>
           <tr>
             <th scope="row"><%=counter++-%></th>
