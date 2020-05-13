@@ -20,17 +20,16 @@
       <%_ let scores = [];-%>
       <%_ for (const team of teams) { -%>
         <%_ if (team.score != 0) { -%>
+            <%_ let counterdos = 1;-%>
             <%_ hold = team.score;-%>
             <%_ scores.push(hold);-%>
-            <%_ for (const s of scores) { -%>
-              <%_ if (team.score === hold) { -%>
+            <%_scores.sort((a,b)=>a-b);-%>
+            <%_ for (const team of teams) { -%>
                 <tr>
-                  <th scope="row"><%=counter++-%></th>
-                  <%_ hold = team.score;-%>
+                  <th scope="row"><%=counterdos++-%></th>
                   <td><%= team._id-%></td>
                   <td><%= team.score-%></td>
                 </tr>
-              <%_ } -%>
             <%_ } -%>
         <%_ } else { -%>
           <tr>
