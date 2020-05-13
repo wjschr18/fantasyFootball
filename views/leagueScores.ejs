@@ -34,8 +34,8 @@
             <%_ } -%>
           <%_ } -%>
         <%_ } -%>
-      <%_ } if (team.score === 0) { -%>
-        <%_ for (const team of teams) { -%>
+      <%_ } for (const team of teams) { -%>
+        <%_ if (team.score === 0) { -%>
           <tr>
             <th scope="row"><%=counter++-%></th>
             <td><%= team._id-%></td>
