@@ -56,7 +56,7 @@
 
   $('.delete').on('click', function(event){
     const button = $(this);
-    const id = button.prev().text();
+    const id = button.prev().prev().text();
     $.ajax({method: 'delete', url: `/teams/${id}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
