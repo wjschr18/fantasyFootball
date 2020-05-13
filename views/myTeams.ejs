@@ -18,12 +18,17 @@
               <%_ if (team.owner === user._id) { -%>
                 <tr>
                 <th scope="row"><%=counter++-%></th>
-                    <td>
+                  <td>
+                    <div class="col border m-4 p-4">
                       <span><%= team._id-%></span>
                       <button class="delete btn btn-outline-primary">Delete Team</button>
-                    </td>
-                  <td><%= team.score-%>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="col border m-4 p-4">
+                      <span><%= team.score-%></span>
                       <button class="btn btn-outline-primary"><a href="/teams/scores/<%= team._id-%>">Enter Stats</a></button>
+                    </div>
                   </td>
                 </tr>
               <%_ } -%>

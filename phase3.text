@@ -1,7 +1,7 @@
 Feedback on page layouts
 1) In the login form, the Create An Account button seems
 unnecessarily long.
---> some what fixed
+--> Done
 
 2) When we hit the Create An Account button, it seems unnecessary
 to generate a whole new form. Why not have this button send the
