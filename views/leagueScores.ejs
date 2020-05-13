@@ -28,10 +28,11 @@
               <%_ if (team.score === s) { -%>
                 <tr>
                   <th scope="row"><%=counterdos++-%></th>
-                  
+                  <td><%= team._id-%></td>
                   <td><%= team.score-%></td>
                 </tr>
             <%_ } -%>
+          <%_ } -%>
           <%_ } -%>
         <%_ } else { -%>
           <tr>
@@ -40,7 +41,6 @@
             <td><%= team.score-%></td>
           </tr>
         <%_ } -%>
-      <%_ } -%>
     </tbody>
   </table>
 <%_ } -%>
