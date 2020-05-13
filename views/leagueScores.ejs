@@ -25,12 +25,14 @@
             <%_ scores.push(hold);-%>
             <%_scores.sort((a,b)=>b-a);-%>
             <%_ for (const s of scores) { -%>
+              <%_ if (team.score === s) { -%>
                 <tr>
                   <th scope="row"><%=counterdos++-%></th>
-                  <td><%= team._id-%></td>
+                  
                   <td><%= team.score-%></td>
                 </tr>
             <%_ } -%>
+          <%_ } -%>
         <%_ } else { -%>
           <tr>
             <th scope="row"><%=counter++-%></th>
