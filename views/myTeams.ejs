@@ -20,10 +20,10 @@
                 <th scope="row"><%=counter++-%></th>
                     <td>
                       <span><%= team._id-%></span>
-                      <button class="delete btn btn-primary">Delete Team</button>
+                      <button class="delete btn btn-outline-primary">Delete Team</button>
                     </td>
                   <td><%= team.score-%>
-                      <button class="btn btn-primary"><a href="/teams/scores/<%= team._id-%>">Enter Stats</a></button>
+                      <button class="btn btn-outline-primary"><a href="/teams/scores/<%= team._id-%>" >Enter Stats</a></button>
                   </td>
                 </tr>
               <%_ } -%>
