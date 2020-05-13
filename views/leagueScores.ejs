@@ -23,8 +23,8 @@
             <%_ let counterdos = 1;-%>
             <%_ hold = team.score;-%>
             <%_ scores.push(hold);-%>
-            <%_scores.sort((a,b)=>a-b);-%>
-            <%_ for (const team of teams) { -%>
+            <%_scores.sort((a,b)=>b-a);-%>
+            <%_ for (const s of scores) { -%>
                 <tr>
                   <th scope="row"><%=counterdos++-%></th>
                   <td><%= team._id-%></td>
