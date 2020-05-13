@@ -18,7 +18,10 @@
       <%_ let counter = 1;-%>
       <%_ let hold = 0;-%>
       <%_ let scores = [];-%>
+      <%_ let holder = [];-%>
+      <%_ let c = 0;-%>
       <%_ for (const team of teams) { -%>
+        <%_ holder.push(1);-%>
         <%_ if (team.score != 0) { -%>
             <%_ let counterdos = 1;-%>
             <%_ hold = team.score;-%>
@@ -36,13 +39,16 @@
         <%_ } -%>
       <%_ } for (const team of teams) { -%>
         <%_ if (team.score === 0) { -%>
-          <tr>
-            <th scope="row"><%=counter++-%></th>
-            <td><%= team._id-%></td>
-            <td><%= team.score-%></td>
-          </tr>
+          <%_ c++;-%>
+          <%_ if (holder.length === c) { -%>
+            <tr>
+              <th scope="row"><%=counter++-%></th>
+              <td><%= team._id-%></td>
+              <td><%= team.score-%></td>
+            </tr>
         <%_ } -%>
       <%_ } -%>
+    <%_ } -%>
     </tbody>
   </table>
 <%_ } -%>
