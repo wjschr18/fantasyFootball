@@ -24,7 +24,7 @@ these buttons would be in a column of their own.
 (Note this would mean changing your delete event handler slightly,
 since the ID would be in a different relative location to the delete
 button.)
---> easy
+--> Done
 
 5) On the League Scores page, the teams should be sorted by score,
 with the highest-scoring team at the top. (Your controller can ask
