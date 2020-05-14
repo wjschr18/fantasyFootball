@@ -6,7 +6,7 @@ unnecessary to generate a whole new form. Why not have
 this button send the post request itself, using the
 name in the login box?
 
--------> close
+-------> Think it is better to create like this
 
 2) The My Teams page has two headings, while the
 other pages all now have one. (Also there's now some
@@ -20,7 +20,7 @@ Delete Team and Enter Stats buttons don't line up.
 Ideally, for the sake of alignment, these would be
 in a column of their own.
 
---------> Done?
+--------> close
 
 4) On the page for updating a team score, the ID of
 the team we're updating should appear somewhere.
@@ -29,7 +29,7 @@ Can you get it centered below the two cards? And one
 last detail I'm seeing here - the inputs need some
 right margins to match their left margins.)
 
----------> Done?
+---------> Done
 
 5)  On the page for updating a team score, there is a
 typo Recieving in one of the labels.
