@@ -50,9 +50,8 @@
   <script>
 
   $('.delete').on('click', function(event){
-    //const last = $('.last span').text();
     const button = $(this);
-    const id = button.val(); //.prev().text();
+    const id = button.val();
     $.ajax({method: 'delete', url: `/teams/${id}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
