@@ -25,16 +25,15 @@
 
                       <span class="pr-3"><%= team._id-%></span>
                       <button class="delete btn btn-primary pl-6">
-                        <div class="col m-6 p-6">Delete Team</div>
+                        <div class="col m-6 p-6">Delete Team
                       </button>
-
+                    </div>
                   </td>
                   <td>
-
-                      <span class="pr-3"><%= team.score-%></span>
-                      <div class="col m-6 p-6">
-                        <button class="btn btn-primary pl-6"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
-                      </div>
+                    <span class="pr-3"><%= team.score-%></span>
+                    <div class="col m-6 p-6">
+                      <button class="btn btn-primary pl-6"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
+                    </div>
                   </td>
                 </tr>
               <%_ } -%>
