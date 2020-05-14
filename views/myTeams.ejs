@@ -55,7 +55,7 @@
     //const last = $('.last span').text();
     const button = $(this);
     const id = button.prevUntil("span").text();
-    $.ajax({method: 'delete', url: `/teams/${last}`})
+    $.ajax({method: 'delete', url: `/teams/${id}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
   });
