@@ -51,7 +51,7 @@
   <script>
 
   $('.delete').on('click', function(event){
-    const last = $('#last span').last()
+    const last = $('div span').last().text();
     //const button = $(this);
     //const id = button.prev().text();
     $.ajax({method: 'delete', url: `/teams/${last}`})
