@@ -30,10 +30,11 @@
 
                   </td>
                   <td>
-                    <div class="col m-6 p-6">
+
                       <span class="pr-3"><%= team.score-%></span>
-                      <button class="btn btn-primary pl-6"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
-                    </div>
+                      <div class="col m-6 p-6">
+                        <button class="btn btn-primary pl-6"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
+                      </div>
                   </td>
                 </tr>
               <%_ } -%>
