@@ -8,9 +8,9 @@
   <%_ } else { -%>
     <%_ } for (const t of teams) { -%>
       <%_ } if (user._id === team.owner) { -%>
-        <span><%= team._id-%></span>
+        <span><%= t._id-%></span>
       <%_ } -%>
-    <%_ } -%> 
+    <%_ } -%>
   <h2 id="newScore" class="mt-4">Enter Your Player's Scores For Team Below:</h2>
   <form id="stats">
   <div class="row">
