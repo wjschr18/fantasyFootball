@@ -43,7 +43,7 @@
           .fail(error => alert(error.responseText));
 
         $.ajax({method: 'post', url: '/login', data: form.serialize()})
-            .done(() => window.location.reload())
+            .done(() => window.location.replace('/'))
             .fail(error => alert('Could not log in.'));
     });
   });
