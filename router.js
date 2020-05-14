@@ -39,7 +39,7 @@ router.get('/teams/scores/:id', function(request, response){
 //Handle requests
 router.post('/teams', teams.create);
 router.delete('/teams/:id', teams.delete);
-router.post('/users', users.create, users.login);
+router.post('/users', users.create);
 router.put('/teams/:id', teams.update);
 
 // Export the router
