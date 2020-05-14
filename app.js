@@ -56,9 +56,7 @@ app.use(function(request, response) {
 app.use(function(error, request, response, next) {
   if (error.name === 'MongoError' && error.code === 11000) {
     console.log('Validation error: Duplicate ID');
-    response.status(400).end();
-  } else {
-    next(error);
+    response.status(400).send('Duplicate ID').end();
   }
 });
 
