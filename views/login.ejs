@@ -40,11 +40,9 @@
         event.preventDefault();
         const form = $(this);
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
-          .done($.ajax({method: 'post', url: '/login', data: form.serialize()})
-                    .done(() => window.location.reload())
-                    .fail(error => alert('Could not log in.')))
-          .fail(error => alert('Username already in use.'));
-
+        $.ajax({method: 'post', url: '/login', data: form.serialize()})
+              .done(() => window.location.reload())
+              .fail(error => alert('Username not available.'));
 
     });
   });
