@@ -40,10 +40,9 @@
         event.preventDefault();
         const form = $(this);
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
-          .done(() => window.location.reload()).then($.ajax({method: 'post', url: '/login', data: form.serialize()})
-                                                        .done(() => window.location.reload())
-                                                        .fail(error => alert('Please enter a valid username.')))
-          .fail(error => alert('Username not available.'));
+          .done(() => window.location.reload())
+          .fail(error => alert('Username not available.'))
+          $.ajax({method: 'post', url: '/login', data: form.serialize()});
     });
   });
 </script>
