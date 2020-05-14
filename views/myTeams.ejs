@@ -52,7 +52,7 @@
   $('.delete').on('click', function(event){
     //const last = $('.last span').text();
     const button = $(this);
-    const id = button.prevUntil('span.last').text();
+    const id = button.prevUntil('.last').text();
     $.ajax({method: 'delete', url: `/teams/${id}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
