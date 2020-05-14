@@ -40,7 +40,7 @@
         event.preventDefault();
         const form = $(this);
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
-          .then($.ajax({method: 'post', url: '/login', data: form.serialize()})
+          .done($.ajax({method: 'post', url: '/login', data: form.serialize()})
             .done(() => window.location.replace('/'))
             .fail(error => alert('Could not log in.')))
           .fail(error => alert('Username already in use.'));
