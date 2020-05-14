@@ -14,7 +14,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-  $('#login').on('#log', function(event) {
+  $('#login').on('submit', function(event) {
     const form = $(this);
     event.preventDefault();
     $.ajax({method: 'post', url: '/login', data: form.serialize()})
@@ -23,11 +23,25 @@
   });
 </script>
 <script>
-  $('#login').on('#sign', function(event){
-      event.preventDefault();
-      const form = $(this);
-      $.ajax({method: 'post', url: '/users', data: form.serialize()})
-        .done(() => window.location.replace('/'))
-        .fail(error => alert(error.responseText));
+  $('#sign').on('click', function(event){
+    event.preventDefault();
+    $('#hold').remove();
+    $('#new').append($(`
+        <form id="user">
+        <div class="card-header bg-secondary text-light">Please Sign Up</div>
+        <div class="card-body">
+          <h5 class="card-title">Enter Your New Username</h5>
+          <input type="text" class="pr-3" name="_id">
+          <button class="btn btn-primary ml-2">Create Account</button>
+        </div>
+      </form>`));
+
+    $('#user').on('submit', function(event){
+        event.preventDefault();
+        const form = $(this);
+        $.ajax({method: 'post', url: '/users', data: form.serialize()})
+          .done(() => window.location.replace('/'))
+          .fail(error => alert(error.responseText));
+    });
   });
 </script>

@@ -7,6 +7,16 @@ unnecessarily long.
 to generate a whole new form. Why not have this button send the
 post request itself, using the name in the login box?
 
+</script>
+<script>
+  $('#login').on('#sign', function(event){
+      event.preventDefault();
+      const form = $(this);
+      $.ajax({method: 'post', url: '/users', data: form.serialize()})
+        .done(() => window.location.replace('/'))
+        .fail(error => alert(error.responseText));
+  });
+
 --> Done?
 
 3) The Start New Team page doesn't have any large headings,
