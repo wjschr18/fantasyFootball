@@ -6,12 +6,7 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    <%_ for (const team of teams) { -%>
-      <%_ if (user._id === team.owner) { -%>
-        <%= team._id -%>
-      <%_ } -%>
-    <%_ } -%>
-  <h2 id="newScore" class="mt-4">Enter Your Player's Scores For Team Below:</h2>
+  <h2 id="newScore" class="mt-4">Enter Your Player's Scores For Team <%= id-%> Below:</h2>
   <form id="stats">
   <div class="row">
     <div class="col m-2 p-2">
