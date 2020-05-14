@@ -41,9 +41,9 @@
         const form = $(this);
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
           .fail(error => alert('Username not available.'))
-        $.ajax({method: 'post', url: '/login', data: form.serialize()})
-              .done(() => window.location.reload())
-              .fail(error => alert('Username not available.'));
+          $.ajax({method: 'post', url: '/login', data: form.serialize()})
+                .done(() => window.location.reload())
+                .fail(error => alert('Please enter a valid username.'));
 
     });
   });
