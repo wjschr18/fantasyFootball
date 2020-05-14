@@ -42,7 +42,7 @@
         $.ajax({method: 'post', url: '/users', data: form.serialize()})
           .done($.ajax({method: 'post', url: '/login', data: form.serialize()})
             .done(() => window.location.replace('/')))
-          .fail(error => alert('Username already in use.'));
+          .fail(error => alert('Username already in use.'), window.location.replace('/login'));
     });
   });
 </script>
