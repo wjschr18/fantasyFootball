@@ -1,111 +1,57 @@
-Feedback on page layouts
-1) In the login form, the Create An Account button seems
-unnecessarily long.
---> Done
+Ok, as I go down the list, these are the things I
+wouldn't be able to check off yet:
 
-2) When we hit the Create An Account button, it seems unnecessary
-to generate a whole new form. Why not have this button send the
-post request itself, using the name in the login box?
+1) When we hit the Create An Account button, it seems
+unnecessary to generate a whole new form. Why not have
+this button send the post request itself, using the
+name in the login box?
 
-</script>
-<script>
-  $('#login').on('#sign', function(event){
-      event.preventDefault();
-      const form = $(this);
-      $.ajax({method: 'post', url: '/users', data: form.serialize()})
-        .done(() => window.location.replace('/'))
-        .fail(error => alert(error.responseText));
-  });
+-------> close
 
---> Done?
+2) The My Teams page has two headings, while the
+other pages all now have one. (Also there's now some
+inconsistency in whether the heading is inside a card
+or above one.)
 
-3) The Start New Team page doesn't have any large headings,
-and the My Teams page has two. It would be more consistent for
-each page to have one large heading above the card. And given your
-changes to the My Teams page, the instruction paragraph there is
-no longer relevant.
---> Done
+-------> Done
 
-4) On the My Teams page:
-It would be nice for the table to have the same dark bar with column
-headings as the table in the League Scores page.If you give both
-Delete Team and Enter Stats classes "btn btn-primary" they can both
-look like bootstrap buttons.Ideally, for the sake of alignment,
-these buttons would be in a column of their own.
-(Note this would mean changing your delete event handler slightly,
-since the ID would be in a different relative location to the delete
-button.)
---> Done
+3) When you have team IDs with different lengths, the
+Delete Team and Enter Stats buttons don't line up.
+Ideally, for the sake of alignment, these would be
+in a column of their own.
 
-5) On the League Scores page, the teams should be sorted by score,
-with the highest-scoring team at the top. (Your controller can ask
-the database to sort the teams as it finds them.)
---> Done
+--------> Done?
 
-6) On the page for updating a team score:
-This form takes lots of vertical space and very little horizontal.
-Could you make multiple columns so that we don't have to scroll?
-The ID of the team we're updating should appear somewhere - maybe
-instead of the long heading at the top. The Home link is highlighted,
-but it would be more appropriate for My Teams to be highlighted.
-The Submit Stats button doesn't have any bootstrap styling.
-There is a typo Recieving in one of the labels.
---> Done
+4) On the page for updating a team score, the ID of
+the team we're updating should appear somewhere.
+(Also the button now breaks the symmetry of the page.
+Can you get it centered below the two cards? And one
+last detail I'm seeing here - the inputs need some
+right margins to match their left margins.)
 
+---------> Done?
 
-Feedback on code organization
-1) Along with a few commented-out things that you can clean up in
-router.js, there are a couple of routes that you can get rid of
-(along with the corresponding functions in the users controller)
-because your site doesn't need to delete or update users.
-router.delete('/user/:id',
-users.delete);
-router.put('/user/:id',
-users.update);
---> Done
+5)  On the page for updating a team score, there is a
+typo Recieving in one of the labels.
 
-2) Currently router.js is handling all but one of your GET requests.
-For consistency, you might as well handle the last GET request there
-too, and get rid of the teams.retrieve controller function.
---> Done
+---------> Done
 
-3) It would be more in keeping with the rest of your naming scheme if
-you used teams.js as the name of the controller for teams. Also,
-the login function in this controller can be deleted (it's not being
-called), and there's some commented-out stuff that you
-can clean up.
+6) You got rid of the calls to users.delete and
+users.update in your router, which is good, but
+those functions are still hanging around
+unnecessarily in the Users controller.
 
---> NEED TO CHANGE
+----------> Done
 
-4) Along with a few commented-out things that you can clean up in app.js,
-this line doesn't make sense:
-response.locals.team
-=
-request.session.team;
--->Done
-
-5) It looks like navs.ejs does open the <body> and some <div> and a
-<main>, but leaves it up to other views to close them. It would be
-simpler to split navs.ejs into two smaller files, one for just the
-<head> and one for just the <nav>. Then you could handle the
-html/body/div/main structure entirely within the rendered views,
-including the <head> and <nav> parts where appropriate. It'd be
-easier to see that you've opened and closed everything correctly
+7) It looks like navs.ejs does open the <body> and
+some <div> and a <main>, but leaves it up to other
+views to close them. It would be simpler to split
+navs.ejs into two smaller files, one for just the
+<head> and one for just the <nav>. Then you could
+handle the html/body/div/main structure entirely
+within the rendered views, including the <head> and
+<nav> parts where appropriate. It'd be easier to see
+that you've opened and closed everything correctly
 this way.
 
---> ??????????????????????
-
-
-Suggestions for phase three
-1) For data integrity, some of the fields in your schemas should be
-required (you can decide which ones) and all strings should be
-trimmed and length-limited. --> Done
-
-2) To help the user enter appropriate values, use number-type inputs
-in your score-update forms. --> Done
-
-3) For security, most of your routes should only be available to
-users who are logged in. --> Done
-
-4) Also for security, a user should only be able to update the
-score of a team they own. --> Done
+----------> easy

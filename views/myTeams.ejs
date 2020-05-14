@@ -5,11 +5,9 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    <h2>Team Management</h2>
+    <h2>Manage Your Teams</h2>
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Your Teams</h3>
-        <h5 id="instructions" class= "mt-4">Welcome to your team page!</p>
         <div id="remove">
           <table class="table table-striped">
             <thead class="thead-dark">
@@ -24,16 +22,18 @@
                 <tr>
                 <th scope="row"><%=counter++-%></th>
                   <td>
-                    <div class="col m-6 p-6">
+
                       <span class="pr-3"><%= team._id-%></span>
-                      <button class="delete btn btn-primary pl-6">Delete Team</button>
-                    </div>
+                      <button class="delete btn btn-primary pl-6">
+                        <div class="col m-6 p-6">Delete Team</div>
+                      </button>
+
                   </td>
                   <td>
                     <div class="col m-6 p-6">
                       <span class="pr-3"><%= team.score-%></span>
                       <button class="btn btn-primary pl-6"><a href="/teams/scores/<%= team._id-%>" class="text-white">Enter Stats</a></button>
-                      </div>
+                    </div>
                   </td>
                 </tr>
               <%_ } -%>

@@ -17,17 +17,3 @@ module.exports.create = function(request, response, next) {
     .then(user => response.status(201).send(user._id))
     .catch(error => next(error));
 };
-
-// DELETE /user/:id
-module.exports.delete = function(request, response, next) {
-  User.findByIdAndDelete(request.params._id)
-    .then(user => user ? response.status(200).end() : next())
-    .catch(error => next(error));
-};
-
-// PUT /user/:id (update team/add team to user)
-module.exports.update = function(request, response, next) {
-  User.findByIdAndUpdate(request.params._id, request.body)
-    .then(user => user ? response.status(200).end() : next())
-    .catch(error => next(error));
-};
