@@ -22,12 +22,12 @@
                 <tr>
                 <th scope="row"><%=counter++-%></th>
                   <td>
-
+                    <div id="last">
                       <span class="pr-3"><%= team._id-%></span>
-                      <button class="delete btn btn-primary pl-6">
-                        <div class="col m-6 p-6">Delete Team
-                      </button>
                     </div>
+                      <div class="col m-6 p-6">
+                        <button class="delete btn btn-primary pl-6">Delete Team</button>
+                      </div>
                   </td>
                   <td>
                     <span class="pr-3"><%= team.score-%></span>
@@ -51,9 +51,10 @@
   <script>
 
   $('.delete').on('click', function(event){
-    const button = $(this);
-    const id = button.prev().text();
-    $.ajax({method: 'delete', url: `/teams/${id}`})
+    const last = $('#last span').last()
+    //const button = $(this);
+    //const id = button.prev().text();
+    $.ajax({method: 'delete', url: `/teams/${last}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
   });
