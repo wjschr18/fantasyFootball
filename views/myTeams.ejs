@@ -23,9 +23,9 @@
                 <tr>
                 <th scope="row"><%=counter++-%></th>
                   <td>
-                      <span class="pr-3 last"><%= team._id-%></span>
+                      <span class="pr-3"><%= team._id-%></span>
                       <div class="col m-6 p-6">
-                        <button class="delete btn btn-primary pl-6">Delete Team</button>
+                        <button class="delete btn btn-primary pl-6" value="<%= team._id-%>">Delete Team</button>
                       </div>
                   </td>
                   <td>
@@ -52,7 +52,7 @@
   $('.delete').on('click', function(event){
     //const last = $('.last span').text();
     const button = $(this);
-    const id = button.prevUntil('.last').text();
+    const id = button.val(); //.prev().text();
     $.ajax({method: 'delete', url: `/teams/${id}`})
       .done(() => window.location.reload())
       .fail(error => alert(error.responseText));
