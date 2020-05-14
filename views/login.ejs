@@ -3,9 +3,9 @@
   <div id="hold">
   <div class="card-header bg-secondary text-light">Please Sign In</div>
   <form id="login">
-    <h6 class="pl-2 pt-1">Username</h6>
+    <h5 class="pl-2 pt-1">Username</h5>
     <input type="text" name="_id" class="ml-4">
-    <button type="submit" class="btn btn-primary">Sign In</button>
+    <button type="submit" id="log" class="btn btn-primary">Sign In</button>
     <button type="submit" id="sign" class="btn btn-primary">Create An Account</button>
   </form>
   </div>
@@ -14,34 +14,19 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-  $('#login').on('submit', function(event) {
+  $('#login').on('#log', function(event) {
     const form = $(this);
     event.preventDefault();
     $.ajax({method: 'post', url: '/login', data: form.serialize()})
       .done(() => window.location.reload())
       .fail(error => alert('Could not log in.'));
   });
-</script>
-<script>
-  $('#sign').on('click', function(event){
-    event.preventDefault();
-    $('#hold').remove();
-    $('#new').append($(`
-        <form id="user">
-        <h2>Create an Account</h2>
-        <div class="card-body">
-          <h5 class="card-title">Enter Your New Username</h5>
-          <input type="text" class="pr-3" name="_id">
-          <button class="btn btn-primary ml-2">Sign Up</button>
-        </div>
-      </form>`));
 
-    $('#user').on('submit', function(event){
-        event.preventDefault();
-        const form = $(this);
-        $.ajax({method: 'post', url: '/users', data: form.serialize()})
-          .done(() => window.location.replace('/'))
-          .fail(error => alert(error.responseText));
-    });
+  $('#login').on('#sign', function(event){
+      event.preventDefault();
+      const form = $(this);
+      $.ajax({method: 'post', url: '/users', data: form.serialize()})
+        .done(() => window.location.replace('/'))
+        .fail(error => alert(error.responseText));
   });
 </script>

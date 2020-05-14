@@ -35,13 +35,12 @@ router.get('/teams/manage', function(request, response){
 router.get('/teams/scores/:id', function(request, response){
   Team.find().then(team => response.render('teamScore', {id: request.params.id}));
 });
-
 //router.get('/teams/scores/:id', teams.retrieve);
 
 //Handle requests
 router.post('/teams', teams.create);
 router.delete('/teams/:id', teams.delete);
-router.post('/users', users.create);
+router.post('/users', users.create, users.login);
 router.put('/teams/:id', teams.update);
 
 // Export the router
