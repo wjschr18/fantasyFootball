@@ -6,8 +6,8 @@
   <%_ if (!user) { -%>
     <%- include('./login'); -%>
   <%_ } else { -%>
-    <%_ } for (const t of teams) { -%>
-      <%_ } if (user._id === team.owner) { -%>
+    <%_ for (const t of teams) { -%>
+      <%_ if (user._id === team.owner) { -%>
         <span><%= t._id-%></span>
       <%_ } -%>
     <%_ } -%>
