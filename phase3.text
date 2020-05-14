@@ -6,7 +6,7 @@ unnecessary to generate a whole new form. Why not have
 this button send the post request itself, using the
 name in the login box?
 
--------> glitchy
+-------> Done
 
 2) The My Teams page has two headings, while the
 other pages all now have one. (Also there's now some
